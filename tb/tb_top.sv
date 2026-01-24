@@ -4,11 +4,16 @@
 `include "uart_if.sv"
 `include "transaction.sv"
 `include "environment.sv"
+//// Tests
 `include "base_test.sv"
 `include "test_sanity.sv"
 `include "test_tx.sv"
 `include "test_rx.sv"
-`include "../rtl/uart.sv"
+`include "test_flow_control.sv"
+`include "test_error_injection.sv"
+`include "test_fifo.sv"
+
+//`include "../rtl/uart.sv"
 
 module tb_top;
 
@@ -77,14 +82,62 @@ module tb_top;
     environment env;
     base_test   test;
 
+    string test_name;
+
     initial begin
         env = new("env");
-        env.build(apb_if_i.TB_DRV, apb_if_i.TB_MON,
-                  uart_if_i.TB_DRV, uart_if_i.TB_MON,
-                  pclk);
+        // Manually assign interfaces and explicit config since build() takes no args
+        env.apb_vif_drv   = apb_if_i.TB_DRV;
+        env.apb_vif_mon   = apb_if_i.TB_MON;
+        env.uart_vif_drv  = uart_if_i.TB_DRV;
+        env.uart_vif_mon  = uart_if_i.TB_MON;
+        env.pclk_ref      = pclk;
+        
+        env.build();
 
-        // Default: sanity test
-        test = new test_sanity();
+        if (!$value$plusargs("TESTNAME=%s", test_name)) begin
+            test_name = "test_sanity";
+            $display("No +TESTNAME provided. Running default: %s", test_name);
+        end else begin
+            $display("Running test: %s", test_name);
+        end
+
+        case (test_name)
+            "test_sanity": begin
+                test_sanity t;
+                t = new();
+                test = t;
+            end
+            "test_tx": begin
+                test_tx t;
+                t = new();
+                test = t;
+            end
+            "test_rx": begin
+                test_rx t;
+                t = new();
+                test = t;
+            end
+            "test_flow_control": begin
+                test_flow_control t;
+                t = new();
+                test = t;
+            end
+            "test_error_injection": begin
+                test_error_injection t;
+                t = new();
+                test = t;
+            end
+            "test_fifo": begin
+                test_fifo t;
+                t = new();
+                test = t;
+            end
+            default: begin
+                $fatal("Test name '%s' not found.", test_name);
+            end
+        endcase
+
         test.env = env;
         test.configure();
         test.run();

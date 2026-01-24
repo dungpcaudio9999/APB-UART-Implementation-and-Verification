@@ -4,15 +4,18 @@
 `include "base_test.sv"
 
 class test_sanity extends base_test;
-    function new();
-        super.new("test_sanity");
-    endfunction
+  
+  // Sửa lại hàm new để nhận string name
+  function new(string name = "test_sanity");
+    super.new(name); // Gọi constructor của class cha
+  endfunction
 
-    virtual task configure();
-        // Sanity: few transactions, maybe directed later
-        env.apb_gen.num_transactions = 10;
-    endtask
+  virtual task configure();
+    $display("[TEST_SANITY] Configuring test with 10 transactions");
+    // Truy cập vào generator thông qua environment để đặt số lượng gói tin
+    env.apb_gen.num_transactions = 10;
+  endtask
+  
 endclass
 
 `endif
-

@@ -14,12 +14,12 @@
 class environment;
   string name;
 
-  // Virtual interfaces
+  // Virtual interfaces (Public để gán từ ngoài)
   virtual apb_if.TB_DRV  apb_vif_drv;
   virtual apb_if.TB_MON  apb_vif_mon;
   virtual uart_if.TB_DRV uart_vif_drv;
   virtual uart_if.TB_MON uart_vif_mon;
-
+  
   // Mailboxes
   mailbox #(apb_transaction)  apb_gen2drv_mb;
   mailbox #(apb_transaction)  apb_mon_mb;
@@ -35,7 +35,6 @@ class environment;
   scoreboard         sb;
   coverage_collector cov;
 
-  // Clock reference for coverage
   logic pclk_ref;
 
   function new(string name = "environment");
@@ -46,24 +45,16 @@ class environment;
     uart_mon_mb     = new();
   endfunction
 
-  function void build(virtual apb_if.TB_DRV  apb_vif_drv,
-                      virtual apb_if.TB_MON  apb_vif_mon,
-                      virtual uart_if.TB_DRV uart_vif_drv,
-                      virtual uart_if.TB_MON uart_vif_mon,
-                      ref logic pclk_ref);
-    this.apb_vif_drv  = apb_vif_drv;
-    this.apb_vif_mon  = apb_vif_mon;
-    this.uart_vif_drv = uart_vif_drv;
-    this.uart_vif_mon = uart_vif_mon;
-    this.pclk_ref     = pclk_ref;
-
+  // --- HÀM BUILD: TRỐNG (0 THAM SỐ) ---
+  function void build();
+    // Khởi tạo components
     apb_gen = new("apb_gen", apb_gen2drv_mb);
     apb_drv = new("apb_drv", apb_vif_drv, apb_gen2drv_mb);
     apb_mon = new("apb_mon", apb_vif_mon, apb_mon_mb);
 
     uart_drv = new("uart_drv", uart_vif_drv, uart_gen2drv_mb);
     uart_mon = new("uart_mon", uart_vif_mon, uart_mon_mb);
-
+    
     sb  = new("scoreboard", apb_mon_mb, uart_mon_mb);
     cov = new("coverage", apb_mon_mb, pclk_ref);
   endfunction
@@ -79,8 +70,5 @@ class environment;
       cov.run();
     join_none
   endtask
-
 endclass
-
 `endif
-
