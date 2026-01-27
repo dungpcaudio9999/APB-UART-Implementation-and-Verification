@@ -1,0 +1,1228 @@
+# do run.do test_full_regression
+# QuestaSim-64 vlog 10.7c Compiler 2018.08 Aug 18 2018
+# Start time: 09:22:45 on Jan 27,2026
+# vlog -work work "+cover=bcestf" "+incdir+../rtl" ../rtl/uart.svp 
+# -- Compiling module uart
+# 
+# Top level modules:
+# 	uart
+# End time: 09:22:46 on Jan 27,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# +incdir+../tb/include +incdir+../tb/env +incdir+../tb/test +incdir+../tb/apb_agent +incdir+../tb/uart_agent
+# QuestaSim-64 vlog 10.7c Compiler 2018.08 Aug 18 2018
+# Start time: 09:22:46 on Jan 27,2026
+# vlog -work work "+incdir+../tb/include" "+incdir+../tb/env" "+incdir+../tb/test" "+incdir+../tb/apb_agent" "+incdir+../tb/uart_agent" ../tb/tb_top.sv 
+# -- Compiling interface apb_if
+# -- Compiling interface uart_if
+# -- Compiling package tb_top_sv_unit
+# -- Compiling module tb_top
+# 
+# Top level modules:
+# 	tb_top
+# End time: 09:22:46 on Jan 27,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# test_sanity test_tx test_rx test_flow_control test_error_injection test_config_modes test_fifo test_full_regression
+# test_full_regression
+# vsim -coverage -voptargs="+acc +cover=bcestf" tb_top "+TESTNAME=test_full_regression" 
+# Start time: 09:22:46 on Jan 27,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# //  Questa Sim-64
+# //  Version 10.7c win64 Aug 18 2018
+# //
+# //  Copyright 1991-2018 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.tb_top_sv_unit(fast)
+# Loading work.tb_top(fast)
+# Loading work.apb_if(fast)
+# Loading work.uart_if(fast)
+# Loading work.uart(fast)
+# Loading work.apb_if(fast)
+# Loading work.uart_if(fast)
+# Running test: test_full_regression
+# [test_full_regression] Starting Full Regression Suite...
+# [REGRESSION] >>> Configuring DUT (8 Data Bits) <<<
+# [sb] Scoreboard started...
+# [0] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] APB Driving WRITE Addr=008 Data=00000003
+# [FLOW_MON] APB Captured Addr=008 Data=0x03
+# 
+# [REGRESSION] >>> Running TEST_SANITY <<<
+# [FLOW_DRV] APB Driving READ Addr=00c
+# [FLOW_MON] APB Captured Addr=00c Data=0x5a
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=3b188266
+# [FLOW_MON] APB Captured Addr=000 Data=0x66
+# [FLOW_SCB] APB Write TX Data: 0x66. Queue size: 1
+# [FLOW_DRV] APB Driving READ Addr=008
+# [FLOW_MON] APB Captured Addr=008 Data=0x63
+# [FLOW_DRV] APB Driving READ Addr=004
+# [FLOW_MON] APB Captured Addr=004 Data=0x00
+# ** Warning: [FLOW_SCB] APB Read RX Empty Queue! Addr: 4 Data: 0x54e8000
+#    Time: 2230 ns  Scope: tb_top_sv_unit.scoreboard.process_apb File: ../tb/env/scoreboard.sv Line: 56
+# [FLOW_DRV] APB Driving WRITE Addr=008 Data=8f63f598
+# [FLOW_MON] APB Captured Addr=008 Data=0x98
+# [FLOW_DRV] APB Driving READ Addr=010
+# [FLOW_MON] APB Captured Addr=010 Data=0x73
+# [FLOW_DRV] APB Driving READ Addr=010
+# [FLOW_MON] APB Captured Addr=010 Data=0x9b
+# [FLOW_DRV] APB Driving WRITE Addr=00c Data=1d5d36bf
+# [FLOW_MON] APB Captured Addr=00c Data=0xbf
+# [FLOW_DRV] APB Driving READ Addr=004
+# [FLOW_MON] APB Captured Addr=004 Data=0x00
+# ** Warning: [FLOW_SCB] APB Read RX Empty Queue! Addr: 4 Data: 0x8e8900
+#    Time: 2530 ns  Scope: tb_top_sv_unit.scoreboard.process_apb File: ../tb/env/scoreboard.sv Line: 56
+# [FLOW_DRV] APB Driving READ Addr=010
+# [FLOW_MON] APB Captured Addr=010 Data=0x43
+# 
+# [REGRESSION] >>> Running TEST_TX <<<
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=a07608ca
+# [FLOW_MON] APB Captured Addr=000 Data=0xca
+# [FLOW_SCB] APB Write TX Data: 0xca. Queue size: 2
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=198c24da
+# [FLOW_MON] APB Captured Addr=000 Data=0xda
+# [FLOW_SCB] APB Write TX Data: 0xda. Queue size: 3
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=a520b155
+# [FLOW_MON] APB Captured Addr=000 Data=0x55
+# [FLOW_SCB] APB Write TX Data: 0x55. Queue size: 4
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=5d47353f
+# [FLOW_MON] APB Captured Addr=000 Data=0x3f
+# [FLOW_SCB] APB Write TX Data: 0x3f. Queue size: 5
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=f1e5a15d
+# [FLOW_MON] APB Captured Addr=000 Data=0x5d
+# [FLOW_SCB] APB Write TX Data: 0x5d. Queue size: 6
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=4c4deb63
+# [FLOW_MON] APB Captured Addr=000 Data=0x63
+# [FLOW_SCB] APB Write TX Data: 0x63. Queue size: 7
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=bb22b48d
+# [FLOW_MON] APB Captured Addr=000 Data=0x8d
+# [FLOW_SCB] APB Write TX Data: 0x8d. Queue size: 8
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=2a035b5e
+# [FLOW_MON] APB Captured Addr=000 Data=0x5e
+# [FLOW_SCB] APB Write TX Data: 0x5e. Queue size: 9
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=6b97bbf9
+# [FLOW_MON] APB Captured Addr=000 Data=0xf9
+# [FLOW_SCB] APB Write TX Data: 0xf9. Queue size: 10
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=4b9e6ef1
+# [FLOW_MON] APB Captured Addr=000 Data=0xf1
+# [FLOW_SCB] APB Write TX Data: 0xf1. Queue size: 11
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=62e191c1
+# [FLOW_MON] APB Captured Addr=000 Data=0xc1
+# [FLOW_SCB] APB Write TX Data: 0xc1. Queue size: 12
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=51ff0012
+# [FLOW_MON] APB Captured Addr=000 Data=0x12
+# [FLOW_SCB] APB Write TX Data: 0x12. Queue size: 13
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=b2132822
+# [FLOW_MON] APB Captured Addr=000 Data=0x22
+# [FLOW_SCB] APB Write TX Data: 0x22. Queue size: 14
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=0391e459
+# [FLOW_MON] APB Captured Addr=000 Data=0x59
+# [FLOW_SCB] APB Write TX Data: 0x59. Queue size: 15
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=0787e8bf
+# [FLOW_MON] APB Captured Addr=000 Data=0xbf
+# [FLOW_SCB] APB Write TX Data: 0xbf. Queue size: 16
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=b48fd40b
+# [FLOW_MON] APB Captured Addr=000 Data=0x0b
+# [FLOW_SCB] APB Write TX Data: 0x0b. Queue size: 17
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=30797cb7
+# [FLOW_MON] APB Captured Addr=000 Data=0xb7
+# [FLOW_SCB] APB Write TX Data: 0xb7. Queue size: 18
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=3b37a066
+# [FLOW_MON] APB Captured Addr=000 Data=0x66
+# [FLOW_SCB] APB Write TX Data: 0x66. Queue size: 19
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=fd8a9a71
+# [FLOW_MON] APB Captured Addr=000 Data=0x71
+# [FLOW_SCB] APB Write TX Data: 0x71. Queue size: 20
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=427097c1
+# [FLOW_MON] APB Captured Addr=000 Data=0xc1
+# [FLOW_SCB] APB Write TX Data: 0xc1. Queue size: 21
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=2d281a2c
+# [FLOW_MON] APB Captured Addr=000 Data=0x2c
+# [FLOW_SCB] APB Write TX Data: 0x2c. Queue size: 22
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=61d4b2df
+# [FLOW_MON] APB Captured Addr=000 Data=0xdf
+# [FLOW_SCB] APB Write TX Data: 0xdf. Queue size: 23
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=6246ff49
+# [FLOW_MON] APB Captured Addr=000 Data=0x49
+# [FLOW_SCB] APB Write TX Data: 0x49. Queue size: 24
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=1272eec2
+# [FLOW_MON] APB Captured Addr=000 Data=0xc2
+# [FLOW_SCB] APB Write TX Data: 0xc2. Queue size: 25
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=5f93b323
+# [FLOW_MON] APB Captured Addr=000 Data=0x23
+# [FLOW_SCB] APB Write TX Data: 0x23. Queue size: 26
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=ae52b79e
+# [FLOW_MON] APB Captured Addr=000 Data=0x9e
+# [FLOW_SCB] APB Write TX Data: 0x9e. Queue size: 27
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=7e69cd95
+# [FLOW_MON] APB Captured Addr=000 Data=0x95
+# [FLOW_SCB] APB Write TX Data: 0x95. Queue size: 28
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=7c6eca1d
+# [FLOW_MON] APB Captured Addr=000 Data=0x1d
+# [FLOW_SCB] APB Write TX Data: 0x1d. Queue size: 29
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=956b0f8e
+# [FLOW_MON] APB Captured Addr=000 Data=0x8e
+# [FLOW_SCB] APB Write TX Data: 0x8e. Queue size: 30
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=44a55f1f
+# [FLOW_MON] APB Captured Addr=000 Data=0x1f
+# [FLOW_SCB] APB Write TX Data: 0x1f. Queue size: 31
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=33ad8393
+# [FLOW_MON] APB Captured Addr=000 Data=0x93
+# [FLOW_SCB] APB Write TX Data: 0x93. Queue size: 32
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=65a3314d
+# [FLOW_MON] APB Captured Addr=000 Data=0x4d
+# [FLOW_SCB] APB Write TX Data: 0x4d. Queue size: 33
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=d9344e86
+# [FLOW_MON] APB Captured Addr=000 Data=0x86
+# [FLOW_SCB] APB Write TX Data: 0x86. Queue size: 34
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=96d49c87
+# [FLOW_MON] APB Captured Addr=000 Data=0x87
+# [FLOW_SCB] APB Write TX Data: 0x87. Queue size: 35
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=0e9afd3c
+# [FLOW_MON] APB Captured Addr=000 Data=0x3c
+# [FLOW_SCB] APB Write TX Data: 0x3c. Queue size: 36
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=8687c815
+# [FLOW_MON] APB Captured Addr=000 Data=0x15
+# [FLOW_SCB] APB Write TX Data: 0x15. Queue size: 37
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=082be54e
+# [FLOW_MON] APB Captured Addr=000 Data=0x4e
+# [FLOW_SCB] APB Write TX Data: 0x4e. Queue size: 38
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=7c9d5383
+# [FLOW_MON] APB Captured Addr=000 Data=0x83
+# [FLOW_SCB] APB Write TX Data: 0x83. Queue size: 39
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=8b68b454
+# [FLOW_MON] APB Captured Addr=000 Data=0x54
+# [FLOW_SCB] APB Write TX Data: 0x54. Queue size: 40
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=3211b9c3
+# [FLOW_MON] APB Captured Addr=000 Data=0xc3
+# [FLOW_SCB] APB Write TX Data: 0xc3. Queue size: 41
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=91f3072e
+# [FLOW_MON] APB Captured Addr=000 Data=0x2e
+# [FLOW_SCB] APB Write TX Data: 0x2e. Queue size: 42
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=6d3650d0
+# [FLOW_MON] APB Captured Addr=000 Data=0xd0
+# [FLOW_SCB] APB Write TX Data: 0xd0. Queue size: 43
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=8a57b933
+# [FLOW_MON] APB Captured Addr=000 Data=0x33
+# [FLOW_SCB] APB Write TX Data: 0x33. Queue size: 44
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=28313694
+# [FLOW_MON] APB Captured Addr=000 Data=0x94
+# [FLOW_SCB] APB Write TX Data: 0x94. Queue size: 45
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=b221fa35
+# [FLOW_MON] APB Captured Addr=000 Data=0x35
+# [FLOW_SCB] APB Write TX Data: 0x35. Queue size: 46
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=fdc0423b
+# [FLOW_MON] APB Captured Addr=000 Data=0x3b
+# [FLOW_SCB] APB Write TX Data: 0x3b. Queue size: 47
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=c48a05d3
+# [FLOW_MON] APB Captured Addr=000 Data=0xd3
+# [FLOW_SCB] APB Write TX Data: 0xd3. Queue size: 48
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=7eacb31d
+# [FLOW_MON] APB Captured Addr=000 Data=0x1d
+# [FLOW_SCB] APB Write TX Data: 0x1d. Queue size: 49
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=403cd841
+# [FLOW_MON] APB Captured Addr=000 Data=0x41
+# [FLOW_SCB] APB Write TX Data: 0x41. Queue size: 50
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=960bbeff
+# [FLOW_MON] APB Captured Addr=000 Data=0xff
+# [FLOW_SCB] APB Write TX Data: 0xff. Queue size: 51
+# [8730000] [TB_TOP] UART TX Toggled: 0
+# 
+# [REGRESSION] >>> Running TEST_RX <<<
+# [REGRESSION] Sending 50 UART bytes to DUT (Total ~9ms)...
+# [17430000] [TB_TOP] UART TX Toggled: 1
+# [87030000] [TB_TOP] UART TX Toggled: 0
+# [FLOW_DRV] UART Driving RX Byte: 43
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 91195282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Error: [FLOW_SCB] TX MISMATCH! Expected: 0x66 | Actual: 0xff
+#    Time: 91195282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 84
+# [FLOW_MON] UART Captured RX: 43
+# [FLOW_SCB] UART RX (Agent->DUT): 0x43. Pushed to RX Queue. Size: 1
+# [95730000] [TB_TOP] UART TX Toggled: 1
+# [165330000] [TB_TOP] UART TX Toggled: 0
+# [174030000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] APB Driving READ Addr=004
+# [FLOW_MON] APB Captured Addr=004 Data=0x1e
+# ** Error: [FLOW_SCB] READ MISMATCH! Addr: 4 | Expected: 0x43 | Actual: 0x1e
+#    Time: 209050 ns  Scope: tb_top_sv_unit.scoreboard.process_apb File: ../tb/env/scoreboard.sv Line: 54
+# [243630000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 247795282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Error: [FLOW_SCB] TX MISMATCH! Expected: 0xca | Actual: 0xff
+#    Time: 247795282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 84
+# [252330000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] UART Driving RX Byte: 16
+# [FLOW_MON] UART Captured RX: 16
+# [FLOW_SCB] UART RX (Agent->DUT): 0x16. Pushed to RX Queue. Size: 1
+# [321930000] [TB_TOP] UART TX Toggled: 0
+# [330630000] [TB_TOP] UART TX Toggled: 1
+# [400230000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 404395282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Error: [FLOW_SCB] TX MISMATCH! Expected: 0xda | Actual: 0xff
+#    Time: 404395282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 84
+# [408930000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] APB Driving READ Addr=004
+# [FLOW_MON] APB Captured Addr=004 Data=0x05
+# ** Error: [FLOW_SCB] READ MISMATCH! Addr: 4 | Expected: 0x16 | Actual: 0x05
+#    Time: 409050 ns  Scope: tb_top_sv_unit.scoreboard.process_apb File: ../tb/env/scoreboard.sv Line: 54
+# [FLOW_DRV] UART Driving RX Byte: e5
+# [FLOW_MON] UART Captured RX: e5
+# [FLOW_SCB] UART RX (Agent->DUT): 0xe5. Pushed to RX Queue. Size: 1
+# [478530000] [TB_TOP] UART TX Toggled: 0
+# [487230000] [TB_TOP] UART TX Toggled: 1
+# [556830000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 560995282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Error: [FLOW_SCB] TX MISMATCH! Expected: 0x55 | Actual: 0xff
+#    Time: 560995282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 84
+# [565530000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] UART Driving RX Byte: 28
+# [FLOW_DRV] APB Driving READ Addr=004
+# [FLOW_MON] APB Captured Addr=004 Data=0x08
+# ** Error: [FLOW_SCB] READ MISMATCH! Addr: 4 | Expected: 0xe5 | Actual: 0x08
+#    Time: 609050 ns  Scope: tb_top_sv_unit.scoreboard.process_apb File: ../tb/env/scoreboard.sv Line: 54
+# [FLOW_MON] UART Captured RX: 28
+# [FLOW_SCB] UART RX (Agent->DUT): 0x28. Pushed to RX Queue. Size: 1
+# [635130000] [TB_TOP] UART TX Toggled: 0
+# [643830000] [TB_TOP] UART TX Toggled: 1
+# [713430000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 717595282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Error: [FLOW_SCB] TX MISMATCH! Expected: 0x3f | Actual: 0xff
+#    Time: 717595282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 84
+# [722130000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] UART Driving RX Byte: f8
+# [FLOW_MON] UART Captured RX: f8
+# [FLOW_SCB] UART RX (Agent->DUT): 0xf8. Pushed to RX Queue. Size: 2
+# [791730000] [TB_TOP] UART TX Toggled: 0
+# [800430000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] APB Driving READ Addr=004
+# [FLOW_MON] APB Captured Addr=004 Data=0x18
+# ** Error: [FLOW_SCB] READ MISMATCH! Addr: 4 | Expected: 0x28 | Actual: 0x18
+#    Time: 809050 ns  Scope: tb_top_sv_unit.scoreboard.process_apb File: ../tb/env/scoreboard.sv Line: 54
+# [870030000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 874195282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Error: [FLOW_SCB] TX MISMATCH! Expected: 0x5d | Actual: 0xff
+#    Time: 874195282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 84
+# [878730000] [TB_TOP] UART TX Toggled: 1
+# [948330000] [TB_TOP] UART TX Toggled: 0
+# [FLOW_DRV] UART Driving RX Byte: 96
+# [957030000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_MON] UART Captured RX: 96
+# [FLOW_SCB] UART RX (Agent->DUT): 0x96. Pushed to RX Queue. Size: 2
+# [FLOW_DRV] APB Driving READ Addr=004
+# [FLOW_MON] APB Captured Addr=004 Data=0x16
+# ** Error: [FLOW_SCB] READ MISMATCH! Addr: 4 | Expected: 0xf8 | Actual: 0x16
+#    Time: 1009050 ns  Scope: tb_top_sv_unit.scoreboard.process_apb File: ../tb/env/scoreboard.sv Line: 54
+# [1026630000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 1030795282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Error: [FLOW_SCB] TX MISMATCH! Expected: 0x63 | Actual: 0xff
+#    Time: 1030795282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 84
+# [1035330000] [TB_TOP] UART TX Toggled: 1
+# [1104930000] [TB_TOP] UART TX Toggled: 0
+# [1113630000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] UART Driving RX Byte: a1
+# [FLOW_MON] UART Captured RX: a1
+# [FLOW_SCB] UART RX (Agent->DUT): 0xa1. Pushed to RX Queue. Size: 2
+# [1183230000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 1187395282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Error: [FLOW_SCB] TX MISMATCH! Expected: 0x8d | Actual: 0xff
+#    Time: 1187395282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 84
+# [1191930000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] APB Driving READ Addr=004
+# [FLOW_MON] APB Captured Addr=004 Data=0x01
+# ** Error: [FLOW_SCB] READ MISMATCH! Addr: 4 | Expected: 0x96 | Actual: 0x01
+#    Time: 1209050 ns  Scope: tb_top_sv_unit.scoreboard.process_apb File: ../tb/env/scoreboard.sv Line: 54
+# [1261530000] [TB_TOP] UART TX Toggled: 0
+# [1270230000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] UART Driving RX Byte: eb
+# [FLOW_MON] UART Captured RX: eb
+# [FLOW_SCB] UART RX (Agent->DUT): 0xeb. Pushed to RX Queue. Size: 2
+# [1339830000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 1343995282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Error: [FLOW_SCB] TX MISMATCH! Expected: 0x5e | Actual: 0xff
+#    Time: 1343995282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 84
+# [1348530000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] APB Driving READ Addr=004
+# [FLOW_MON] APB Captured Addr=004 Data=0x0b
+# ** Error: [FLOW_SCB] READ MISMATCH! Addr: 4 | Expected: 0xa1 | Actual: 0x0b
+#    Time: 1409050 ns  Scope: tb_top_sv_unit.scoreboard.process_apb File: ../tb/env/scoreboard.sv Line: 54
+# [1418130000] [TB_TOP] UART TX Toggled: 0
+# [1426830000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] UART Driving RX Byte: fb
+# [FLOW_MON] UART Captured RX: fb
+# [FLOW_SCB] UART RX (Agent->DUT): 0xfb. Pushed to RX Queue. Size: 2
+# [1496430000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 1500595282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Error: [FLOW_SCB] TX MISMATCH! Expected: 0xf9 | Actual: 0xff
+#    Time: 1500595282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 84
+# [1505130000] [TB_TOP] UART TX Toggled: 1
+# [1574730000] [TB_TOP] UART TX Toggled: 0
+# [1583430000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] APB Driving READ Addr=004
+# [FLOW_MON] APB Captured Addr=004 Data=0x1f
+# ** Error: [FLOW_SCB] READ MISMATCH! Addr: 4 | Expected: 0xeb | Actual: 0x1f
+#    Time: 1609050 ns  Scope: tb_top_sv_unit.scoreboard.process_apb File: ../tb/env/scoreboard.sv Line: 54
+# [FLOW_DRV] UART Driving RX Byte: cf
+# [1653030000] [TB_TOP] UART TX Toggled: 0
+# [FLOW_MON] UART Captured RX: cf
+# [FLOW_SCB] UART RX (Agent->DUT): 0xcf. Pushed to RX Queue. Size: 2
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 1657195282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Error: [FLOW_SCB] TX MISMATCH! Expected: 0xf1 | Actual: 0xff
+#    Time: 1657195282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 84
+# [1661730000] [TB_TOP] UART TX Toggled: 1
+# [1731330000] [TB_TOP] UART TX Toggled: 0
+# [1740030000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] APB Driving READ Addr=004
+# [FLOW_MON] APB Captured Addr=004 Data=0x0d
+# ** Error: [FLOW_SCB] READ MISMATCH! Addr: 4 | Expected: 0xfb | Actual: 0x0d
+#    Time: 1809050 ns  Scope: tb_top_sv_unit.scoreboard.process_apb File: ../tb/env/scoreboard.sv Line: 54
+# [1809630000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 1813795282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Error: [FLOW_SCB] TX MISMATCH! Expected: 0xc1 | Actual: 0xff
+#    Time: 1813795282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 84
+# [1818330000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] UART Driving RX Byte: 2d
+# [FLOW_MON] UART Captured RX: 2d
+# [FLOW_SCB] UART RX (Agent->DUT): 0x2d. Pushed to RX Queue. Size: 2
+# [1887930000] [TB_TOP] UART TX Toggled: 0
+# [1896630000] [TB_TOP] UART TX Toggled: 1
+# [1966230000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 1970395282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Error: [FLOW_SCB] TX MISMATCH! Expected: 0x12 | Actual: 0xff
+#    Time: 1970395282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 84
+# [1974930000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] UART Driving RX Byte: ee
+# [FLOW_MON] UART Captured RX: ee
+# [FLOW_SCB] UART RX (Agent->DUT): 0xee. Pushed to RX Queue. Size: 3
+# [FLOW_DRV] APB Driving READ Addr=004
+# [FLOW_MON] APB Captured Addr=004 Data=0x0e
+# ** Error: [FLOW_SCB] READ MISMATCH! Addr: 4 | Expected: 0xcf | Actual: 0x0e
+#    Time: 2009050 ns  Scope: tb_top_sv_unit.scoreboard.process_apb File: ../tb/env/scoreboard.sv Line: 54
+# [2044530000] [TB_TOP] UART TX Toggled: 0
+# [2053230000] [TB_TOP] UART TX Toggled: 1
+# [2122830000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 2126995282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Error: [FLOW_SCB] TX MISMATCH! Expected: 0x22 | Actual: 0xff
+#    Time: 2126995282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 84
+# [2131530000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] UART Driving RX Byte: de
+# [FLOW_MON] UART Captured RX: de
+# [FLOW_SCB] UART RX (Agent->DUT): 0xde. Pushed to RX Queue. Size: 3
+# [2201130000] [TB_TOP] UART TX Toggled: 0
+# [FLOW_DRV] APB Driving READ Addr=004
+# [FLOW_MON] APB Captured Addr=004 Data=0x1e
+# ** Error: [FLOW_SCB] READ MISMATCH! Addr: 4 | Expected: 0x2d | Actual: 0x1e
+#    Time: 2209050 ns  Scope: tb_top_sv_unit.scoreboard.process_apb File: ../tb/env/scoreboard.sv Line: 54
+# [2209830000] [TB_TOP] UART TX Toggled: 1
+# [2279430000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 2283595282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Error: [FLOW_SCB] TX MISMATCH! Expected: 0x59 | Actual: 0xff
+#    Time: 2283595282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 84
+# [2288130000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] UART Driving RX Byte: 78
+# [FLOW_MON] UART Captured RX: 78
+# [FLOW_SCB] UART RX (Agent->DUT): 0x78. Pushed to RX Queue. Size: 3
+# [2357730000] [TB_TOP] UART TX Toggled: 0
+# [2366430000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] APB Driving READ Addr=004
+# [FLOW_MON] APB Captured Addr=004 Data=0x1f
+# ** Error: [FLOW_SCB] READ MISMATCH! Addr: 4 | Expected: 0xee | Actual: 0x1f
+#    Time: 2409050 ns  Scope: tb_top_sv_unit.scoreboard.process_apb File: ../tb/env/scoreboard.sv Line: 54
+# [2436030000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 2440195282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Error: [FLOW_SCB] TX MISMATCH! Expected: 0xbf | Actual: 0xff
+#    Time: 2440195282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 84
+# [2444730000] [TB_TOP] UART TX Toggled: 1
+# [2514330000] [TB_TOP] UART TX Toggled: 0
+# [FLOW_DRV] UART Driving RX Byte: 89
+# [FLOW_MON] UART Captured RX: 89
+# [FLOW_SCB] UART RX (Agent->DUT): 0x89. Pushed to RX Queue. Size: 3
+# [2523030000] [TB_TOP] UART TX Toggled: 1
+# [2592630000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 2596795282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Error: [FLOW_SCB] TX MISMATCH! Expected: 0x0b | Actual: 0xff
+#    Time: 2596795282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 84
+# [2601330000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] APB Driving READ Addr=004
+# [FLOW_MON] APB Captured Addr=004 Data=0x09
+# ** Error: [FLOW_SCB] READ MISMATCH! Addr: 4 | Expected: 0xde | Actual: 0x09
+#    Time: 2609050 ns  Scope: tb_top_sv_unit.scoreboard.process_apb File: ../tb/env/scoreboard.sv Line: 54
+# [2670930000] [TB_TOP] UART TX Toggled: 0
+# [2679630000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] UART Driving RX Byte: 05
+# [FLOW_MON] UART Captured RX: 05
+# [FLOW_SCB] UART RX (Agent->DUT): 0x05. Pushed to RX Queue. Size: 3
+# [2749230000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 2753395282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Error: [FLOW_SCB] TX MISMATCH! Expected: 0xb7 | Actual: 0xff
+#    Time: 2753395282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 84
+# [2757930000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] APB Driving READ Addr=004
+# [FLOW_MON] APB Captured Addr=004 Data=0x1e
+# ** Error: [FLOW_SCB] READ MISMATCH! Addr: 4 | Expected: 0x78 | Actual: 0x1e
+#    Time: 2809050 ns  Scope: tb_top_sv_unit.scoreboard.process_apb File: ../tb/env/scoreboard.sv Line: 54
+# [2827530000] [TB_TOP] UART TX Toggled: 0
+# [2836230000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] UART Driving RX Byte: 82
+# [FLOW_MON] UART Captured RX: 82
+# [FLOW_SCB] UART RX (Agent->DUT): 0x82. Pushed to RX Queue. Size: 3
+# [2905830000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 2909995282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Error: [FLOW_SCB] TX MISMATCH! Expected: 0x66 | Actual: 0xff
+#    Time: 2909995282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 84
+# [2914530000] [TB_TOP] UART TX Toggled: 1
+# [2984130000] [TB_TOP] UART TX Toggled: 0
+# [2992830000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] APB Driving READ Addr=004
+# [FLOW_MON] APB Captured Addr=004 Data=0x0f
+# ** Error: [FLOW_SCB] READ MISMATCH! Addr: 4 | Expected: 0x89 | Actual: 0x0f
+#    Time: 3009050 ns  Scope: tb_top_sv_unit.scoreboard.process_apb File: ../tb/env/scoreboard.sv Line: 54
+# [FLOW_DRV] UART Driving RX Byte: cf
+# [FLOW_MON] UART Captured RX: cf
+# [FLOW_SCB] UART RX (Agent->DUT): 0xcf. Pushed to RX Queue. Size: 3
+# [3062430000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 3066595282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Error: [FLOW_SCB] TX MISMATCH! Expected: 0x71 | Actual: 0xff
+#    Time: 3066595282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 84
+# [3071130000] [TB_TOP] UART TX Toggled: 1
+# [3140730000] [TB_TOP] UART TX Toggled: 0
+# [3149430000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] APB Driving READ Addr=004
+# [FLOW_MON] APB Captured Addr=004 Data=0x11
+# ** Error: [FLOW_SCB] READ MISMATCH! Addr: 4 | Expected: 0x05 | Actual: 0x11
+#    Time: 3209050 ns  Scope: tb_top_sv_unit.scoreboard.process_apb File: ../tb/env/scoreboard.sv Line: 54
+# [FLOW_DRV] UART Driving RX Byte: 51
+# [FLOW_MON] UART Captured RX: 51
+# [FLOW_SCB] UART RX (Agent->DUT): 0x51. Pushed to RX Queue. Size: 3
+# [3219030000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 3223195282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Error: [FLOW_SCB] TX MISMATCH! Expected: 0xc1 | Actual: 0xff
+#    Time: 3223195282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 84
+# [3227730000] [TB_TOP] UART TX Toggled: 1
+# [3297330000] [TB_TOP] UART TX Toggled: 0
+# [3306030000] [TB_TOP] UART TX Toggled: 1
+# [3375630000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 3379795282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Error: [FLOW_SCB] TX MISMATCH! Expected: 0x2c | Actual: 0xff
+#    Time: 3379795282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 84
+# [3384330000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] UART Driving RX Byte: 37
+# [FLOW_MON] UART Captured RX: 37
+# [FLOW_SCB] UART RX (Agent->DUT): 0x37. Pushed to RX Queue. Size: 4
+# [FLOW_DRV] APB Driving READ Addr=004
+# [FLOW_MON] APB Captured Addr=004 Data=0x17
+# ** Error: [FLOW_SCB] READ MISMATCH! Addr: 4 | Expected: 0x82 | Actual: 0x17
+#    Time: 3409050 ns  Scope: tb_top_sv_unit.scoreboard.process_apb File: ../tb/env/scoreboard.sv Line: 54
+# [3453930000] [TB_TOP] UART TX Toggled: 0
+# [3462630000] [TB_TOP] UART TX Toggled: 1
+# [3532230000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 3536395282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Error: [FLOW_SCB] TX MISMATCH! Expected: 0xdf | Actual: 0xff
+#    Time: 3536395282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 84
+# [3540930000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] UART Driving RX Byte: 9a
+# [FLOW_MON] UART Captured RX: 9a
+# [FLOW_SCB] UART RX (Agent->DUT): 0x9a. Pushed to RX Queue. Size: 4
+# [FLOW_DRV] APB Driving READ Addr=004
+# [FLOW_MON] APB Captured Addr=004 Data=0x1a
+# ** Error: [FLOW_SCB] READ MISMATCH! Addr: 4 | Expected: 0xcf | Actual: 0x1a
+#    Time: 3609050 ns  Scope: tb_top_sv_unit.scoreboard.process_apb File: ../tb/env/scoreboard.sv Line: 54
+# [3610530000] [TB_TOP] UART TX Toggled: 0
+# [3619230000] [TB_TOP] UART TX Toggled: 1
+# [3688830000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 3692995282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Error: [FLOW_SCB] TX MISMATCH! Expected: 0x49 | Actual: 0xff
+#    Time: 3692995282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 84
+# [3697530000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] UART Driving RX Byte: 09
+# [FLOW_MON] UART Captured RX: 09
+# [FLOW_SCB] UART RX (Agent->DUT): 0x09. Pushed to RX Queue. Size: 4
+# [3767130000] [TB_TOP] UART TX Toggled: 0
+# [3775830000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] APB Driving READ Addr=004
+# [FLOW_MON] APB Captured Addr=004 Data=0x1f
+# ** Error: [FLOW_SCB] READ MISMATCH! Addr: 4 | Expected: 0x51 | Actual: 0x1f
+#    Time: 3809050 ns  Scope: tb_top_sv_unit.scoreboard.process_apb File: ../tb/env/scoreboard.sv Line: 54
+# [3845430000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 3849595282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Error: [FLOW_SCB] TX MISMATCH! Expected: 0xc2 | Actual: 0xff
+#    Time: 3849595282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 84
+# [3854130000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] UART Driving RX Byte: 3c
+# [FLOW_MON] UART Captured RX: 3c
+# [FLOW_SCB] UART RX (Agent->DUT): 0x3c. Pushed to RX Queue. Size: 4
+# [3923730000] [TB_TOP] UART TX Toggled: 0
+# [3932430000] [TB_TOP] UART TX Toggled: 1
+# [4002030000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 4006195282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Error: [FLOW_SCB] TX MISMATCH! Expected: 0x23 | Actual: 0xff
+#    Time: 4006195282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 84
+# [FLOW_DRV] APB Driving READ Addr=004
+# [FLOW_MON] APB Captured Addr=004 Data=0x1f
+# ** Error: [FLOW_SCB] READ MISMATCH! Addr: 4 | Expected: 0x37 | Actual: 0x1f
+#    Time: 4009050 ns  Scope: tb_top_sv_unit.scoreboard.process_apb File: ../tb/env/scoreboard.sv Line: 54
+# [4010730000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] UART Driving RX Byte: dd
+# [4080330000] [TB_TOP] UART TX Toggled: 0
+# [FLOW_MON] UART Captured RX: dd
+# [FLOW_SCB] UART RX (Agent->DUT): 0xdd. Pushed to RX Queue. Size: 4
+# [4089030000] [TB_TOP] UART TX Toggled: 1
+# [4158630000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 4162795282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Error: [FLOW_SCB] TX MISMATCH! Expected: 0x9e | Actual: 0xff
+#    Time: 4162795282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 84
+# [4167330000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] APB Driving READ Addr=004
+# [FLOW_MON] APB Captured Addr=004 Data=0x1c
+# ** Error: [FLOW_SCB] READ MISMATCH! Addr: 4 | Expected: 0x9a | Actual: 0x1c
+#    Time: 4209050 ns  Scope: tb_top_sv_unit.scoreboard.process_apb File: ../tb/env/scoreboard.sv Line: 54
+# [4236930000] [TB_TOP] UART TX Toggled: 0
+# [4245630000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] UART Driving RX Byte: e4
+# [FLOW_MON] UART Captured RX: e4
+# [FLOW_SCB] UART RX (Agent->DUT): 0xe4. Pushed to RX Queue. Size: 4
+# [4315230000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 4319395282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Error: [FLOW_SCB] TX MISMATCH! Expected: 0x95 | Actual: 0xff
+#    Time: 4319395282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 84
+# [4323930000] [TB_TOP] UART TX Toggled: 1
+# [4393530000] [TB_TOP] UART TX Toggled: 0
+# [4402230000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] APB Driving READ Addr=004
+# [FLOW_MON] APB Captured Addr=004 Data=0x0b
+# ** Error: [FLOW_SCB] READ MISMATCH! Addr: 4 | Expected: 0x09 | Actual: 0x0b
+#    Time: 4409050 ns  Scope: tb_top_sv_unit.scoreboard.process_apb File: ../tb/env/scoreboard.sv Line: 54
+# [FLOW_DRV] UART Driving RX Byte: 6b
+# [FLOW_MON] UART Captured RX: 6b
+# [FLOW_SCB] UART RX (Agent->DUT): 0x6b. Pushed to RX Queue. Size: 4
+# [4471830000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 4475995282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Error: [FLOW_SCB] TX MISMATCH! Expected: 0x1d | Actual: 0xff
+#    Time: 4475995282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 84
+# [4480530000] [TB_TOP] UART TX Toggled: 1
+# [4550130000] [TB_TOP] UART TX Toggled: 0
+# [4558830000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] UART Driving RX Byte: c5
+# [FLOW_MON] UART Captured RX: c5
+# [FLOW_SCB] UART RX (Agent->DUT): 0xc5. Pushed to RX Queue. Size: 5
+# [FLOW_DRV] APB Driving READ Addr=004
+# [FLOW_MON] APB Captured Addr=004 Data=0x05
+# ** Error: [FLOW_SCB] READ MISMATCH! Addr: 4 | Expected: 0x3c | Actual: 0x05
+#    Time: 4609050 ns  Scope: tb_top_sv_unit.scoreboard.process_apb File: ../tb/env/scoreboard.sv Line: 54
+# [4628430000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 4632595282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Error: [FLOW_SCB] TX MISMATCH! Expected: 0x8e | Actual: 0xff
+#    Time: 4632595282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 84
+# [4637130000] [TB_TOP] UART TX Toggled: 1
+# [4706730000] [TB_TOP] UART TX Toggled: 0
+# [4715430000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] UART Driving RX Byte: 52
+# [FLOW_MON] UART Captured RX: 52
+# [FLOW_SCB] UART RX (Agent->DUT): 0x52. Pushed to RX Queue. Size: 5
+# [4785030000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 4789195282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Error: [FLOW_SCB] TX MISMATCH! Expected: 0x1f | Actual: 0xff
+#    Time: 4789195282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 84
+# [4793730000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] APB Driving READ Addr=004
+# [FLOW_MON] APB Captured Addr=004 Data=0x1f
+# ** Error: [FLOW_SCB] READ MISMATCH! Addr: 4 | Expected: 0xdd | Actual: 0x1f
+#    Time: 4809050 ns  Scope: tb_top_sv_unit.scoreboard.process_apb File: ../tb/env/scoreboard.sv Line: 54
+# [4863330000] [TB_TOP] UART TX Toggled: 0
+# [4872030000] [TB_TOP] UART TX Toggled: 1
+# [4941630000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 4945795282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Error: [FLOW_SCB] TX MISMATCH! Expected: 0x93 | Actual: 0xff
+#    Time: 4945795282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 84
+# [FLOW_DRV] UART Driving RX Byte: 17
+# [4950330000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_MON] UART Captured RX: 17
+# [FLOW_SCB] UART RX (Agent->DUT): 0x17. Pushed to RX Queue. Size: 5
+# [FLOW_DRV] APB Driving READ Addr=004
+# [FLOW_MON] APB Captured Addr=004 Data=0x1f
+# ** Error: [FLOW_SCB] READ MISMATCH! Addr: 4 | Expected: 0xe4 | Actual: 0x1f
+#    Time: 5009050 ns  Scope: tb_top_sv_unit.scoreboard.process_apb File: ../tb/env/scoreboard.sv Line: 54
+# [5019930000] [TB_TOP] UART TX Toggled: 0
+# [5028630000] [TB_TOP] UART TX Toggled: 1
+# [5098230000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 5102395282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Error: [FLOW_SCB] TX MISMATCH! Expected: 0x4d | Actual: 0xff
+#    Time: 5102395282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 84
+# [5106930000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] UART Driving RX Byte: 3a
+# [FLOW_MON] UART Captured RX: 3a
+# [FLOW_SCB] UART RX (Agent->DUT): 0x3a. Pushed to RX Queue. Size: 5
+# [5176530000] [TB_TOP] UART TX Toggled: 0
+# [5185230000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] APB Driving READ Addr=004
+# [FLOW_MON] APB Captured Addr=004 Data=0x1f
+# ** Error: [FLOW_SCB] READ MISMATCH! Addr: 4 | Expected: 0x6b | Actual: 0x1f
+#    Time: 5209050 ns  Scope: tb_top_sv_unit.scoreboard.process_apb File: ../tb/env/scoreboard.sv Line: 54
+# [5254830000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 5258995282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Error: [FLOW_SCB] TX MISMATCH! Expected: 0x86 | Actual: 0xff
+#    Time: 5258995282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 84
+# [5263530000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] UART Driving RX Byte: 8f
+# [FLOW_MON] UART Captured RX: 8f
+# [FLOW_SCB] UART RX (Agent->DUT): 0x8f. Pushed to RX Queue. Size: 5
+# [5333130000] [TB_TOP] UART TX Toggled: 0
+# [5341830000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] APB Driving READ Addr=004
+# [FLOW_MON] APB Captured Addr=004 Data=0x0e
+# ** Error: [FLOW_SCB] READ MISMATCH! Addr: 4 | Expected: 0xc5 | Actual: 0x0e
+#    Time: 5409050 ns  Scope: tb_top_sv_unit.scoreboard.process_apb File: ../tb/env/scoreboard.sv Line: 54
+# [5411430000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 5415595282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Error: [FLOW_SCB] TX MISMATCH! Expected: 0x87 | Actual: 0xff
+#    Time: 5415595282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 84
+# [5420130000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] UART Driving RX Byte: fa
+# [FLOW_MON] UART Captured RX: fa
+# [FLOW_SCB] UART RX (Agent->DUT): 0xfa. Pushed to RX Queue. Size: 5
+# [5489730000] [TB_TOP] UART TX Toggled: 0
+# [5498430000] [TB_TOP] UART TX Toggled: 1
+# [5568030000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 5572195282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Error: [FLOW_SCB] TX MISMATCH! Expected: 0x3c | Actual: 0xff
+#    Time: 5572195282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 84
+# [5576730000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] APB Driving READ Addr=004
+# [FLOW_MON] APB Captured Addr=004 Data=0x13
+# ** Error: [FLOW_SCB] READ MISMATCH! Addr: 4 | Expected: 0x52 | Actual: 0x13
+#    Time: 5609050 ns  Scope: tb_top_sv_unit.scoreboard.process_apb File: ../tb/env/scoreboard.sv Line: 54
+# [FLOW_DRV] UART Driving RX Byte: b3
+# [5646330000] [TB_TOP] UART TX Toggled: 0
+# [FLOW_MON] UART Captured RX: b3
+# [FLOW_SCB] UART RX (Agent->DUT): 0xb3. Pushed to RX Queue. Size: 5
+# [5655030000] [TB_TOP] UART TX Toggled: 1
+# [5724630000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 5728795282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Error: [FLOW_SCB] TX MISMATCH! Expected: 0x15 | Actual: 0xff
+#    Time: 5728795282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 84
+# [5733330000] [TB_TOP] UART TX Toggled: 1
+# [5802930000] [TB_TOP] UART TX Toggled: 0
+# [FLOW_DRV] APB Driving READ Addr=004
+# [FLOW_MON] APB Captured Addr=004 Data=0x03
+# ** Error: [FLOW_SCB] READ MISMATCH! Addr: 4 | Expected: 0x17 | Actual: 0x03
+#    Time: 5809050 ns  Scope: tb_top_sv_unit.scoreboard.process_apb File: ../tb/env/scoreboard.sv Line: 54
+# [5811630000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] UART Driving RX Byte: 03
+# [FLOW_MON] UART Captured RX: 03
+# [FLOW_SCB] UART RX (Agent->DUT): 0x03. Pushed to RX Queue. Size: 5
+# [5881230000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 5885395282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Error: [FLOW_SCB] TX MISMATCH! Expected: 0x4e | Actual: 0xff
+#    Time: 5885395282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 84
+# [5889930000] [TB_TOP] UART TX Toggled: 1
+# [5959530000] [TB_TOP] UART TX Toggled: 0
+# [5968230000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] UART Driving RX Byte: d9
+# [FLOW_MON] UART Captured RX: d9
+# [FLOW_SCB] UART RX (Agent->DUT): 0xd9. Pushed to RX Queue. Size: 6
+# [FLOW_DRV] APB Driving READ Addr=004
+# [FLOW_MON] APB Captured Addr=004 Data=0x19
+# ** Error: [FLOW_SCB] READ MISMATCH! Addr: 4 | Expected: 0x3a | Actual: 0x19
+#    Time: 6009050 ns  Scope: tb_top_sv_unit.scoreboard.process_apb File: ../tb/env/scoreboard.sv Line: 54
+# [6037830000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 6041995282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Error: [FLOW_SCB] TX MISMATCH! Expected: 0x83 | Actual: 0xff
+#    Time: 6041995282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 84
+# [6046530000] [TB_TOP] UART TX Toggled: 1
+# [6116130000] [TB_TOP] UART TX Toggled: 0
+# [6124830000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] UART Driving RX Byte: 83
+# [FLOW_MON] UART Captured RX: 83
+# [FLOW_SCB] UART RX (Agent->DUT): 0x83. Pushed to RX Queue. Size: 6
+# [6194430000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 6198595282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Error: [FLOW_SCB] TX MISMATCH! Expected: 0x54 | Actual: 0xff
+#    Time: 6198595282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 84
+# [6203130000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] APB Driving READ Addr=004
+# [FLOW_MON] APB Captured Addr=004 Data=0x03
+# ** Error: [FLOW_SCB] READ MISMATCH! Addr: 4 | Expected: 0x8f | Actual: 0x03
+#    Time: 6209050 ns  Scope: tb_top_sv_unit.scoreboard.process_apb File: ../tb/env/scoreboard.sv Line: 54
+# [6272730000] [TB_TOP] UART TX Toggled: 0
+# [6281430000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] UART Driving RX Byte: 83
+# [FLOW_MON] UART Captured RX: 83
+# [FLOW_SCB] UART RX (Agent->DUT): 0x83. Pushed to RX Queue. Size: 6
+# [6351030000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 6355195282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Error: [FLOW_SCB] TX MISMATCH! Expected: 0xc3 | Actual: 0xff
+#    Time: 6355195282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 84
+# [6359730000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] APB Driving READ Addr=004
+# [FLOW_MON] APB Captured Addr=004 Data=0x03
+# ** Error: [FLOW_SCB] READ MISMATCH! Addr: 4 | Expected: 0xfa | Actual: 0x03
+#    Time: 6409050 ns  Scope: tb_top_sv_unit.scoreboard.process_apb File: ../tb/env/scoreboard.sv Line: 54
+# [6429330000] [TB_TOP] UART TX Toggled: 0
+# [6438030000] [TB_TOP] UART TX Toggled: 1
+# [6507630000] [TB_TOP] UART TX Toggled: 0
+# [FLOW_DRV] UART Driving RX Byte: f9
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 6511795282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Error: [FLOW_SCB] TX MISMATCH! Expected: 0x2e | Actual: 0xff
+#    Time: 6511795282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 84
+# [FLOW_MON] UART Captured RX: f9
+# [FLOW_SCB] UART RX (Agent->DUT): 0xf9. Pushed to RX Queue. Size: 6
+# [6516330000] [TB_TOP] UART TX Toggled: 1
+# [6585930000] [TB_TOP] UART TX Toggled: 0
+# [6594630000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] APB Driving READ Addr=004
+# [FLOW_MON] APB Captured Addr=004 Data=0x19
+# ** Error: [FLOW_SCB] READ MISMATCH! Addr: 4 | Expected: 0xb3 | Actual: 0x19
+#    Time: 6609050 ns  Scope: tb_top_sv_unit.scoreboard.process_apb File: ../tb/env/scoreboard.sv Line: 54
+# [6664230000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 6668395282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Error: [FLOW_SCB] TX MISMATCH! Expected: 0xd0 | Actual: 0xff
+#    Time: 6668395282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 84
+# [6672930000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] UART Driving RX Byte: c5
+# [FLOW_MON] UART Captured RX: c5
+# [FLOW_SCB] UART RX (Agent->DUT): 0xc5. Pushed to RX Queue. Size: 6
+# [6742530000] [TB_TOP] UART TX Toggled: 0
+# [6751230000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] APB Driving READ Addr=004
+# [FLOW_MON] APB Captured Addr=004 Data=0x06
+# ** Error: [FLOW_SCB] READ MISMATCH! Addr: 4 | Expected: 0x03 | Actual: 0x06
+#    Time: 6809050 ns  Scope: tb_top_sv_unit.scoreboard.process_apb File: ../tb/env/scoreboard.sv Line: 54
+# [6820830000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 6824995282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Error: [FLOW_SCB] TX MISMATCH! Expected: 0x33 | Actual: 0xff
+#    Time: 6824995282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 84
+# [6829530000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] UART Driving RX Byte: 16
+# [FLOW_MON] UART Captured RX: 16
+# [FLOW_SCB] UART RX (Agent->DUT): 0x16. Pushed to RX Queue. Size: 6
+# [6899130000] [TB_TOP] UART TX Toggled: 0
+# [6907830000] [TB_TOP] UART TX Toggled: 1
+# [6977430000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 6981595282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Error: [FLOW_SCB] TX MISMATCH! Expected: 0x94 | Actual: 0xff
+#    Time: 6981595282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 84
+# [6986130000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] APB Driving READ Addr=004
+# [FLOW_MON] APB Captured Addr=004 Data=0x0b
+# ** Error: [FLOW_SCB] READ MISMATCH! Addr: 4 | Expected: 0xd9 | Actual: 0x0b
+#    Time: 7009050 ns  Scope: tb_top_sv_unit.scoreboard.process_apb File: ../tb/env/scoreboard.sv Line: 54
+# [FLOW_DRV] UART Driving RX Byte: eb
+# [FLOW_MON] UART Captured RX: eb
+# [FLOW_SCB] UART RX (Agent->DUT): 0xeb. Pushed to RX Queue. Size: 6
+# [7055730000] [TB_TOP] UART TX Toggled: 0
+# [7064430000] [TB_TOP] UART TX Toggled: 1
+# [7134030000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 7138195282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Error: [FLOW_SCB] TX MISMATCH! Expected: 0x35 | Actual: 0xff
+#    Time: 7138195282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 84
+# [7142730000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] UART Driving RX Byte: 45
+# [FLOW_DRV] APB Driving READ Addr=004
+# [FLOW_MON] APB Captured Addr=004 Data=0x05
+# ** Error: [FLOW_SCB] READ MISMATCH! Addr: 4 | Expected: 0x83 | Actual: 0x05
+#    Time: 7209050 ns  Scope: tb_top_sv_unit.scoreboard.process_apb File: ../tb/env/scoreboard.sv Line: 54
+# [FLOW_MON] UART Captured RX: 45
+# [FLOW_SCB] UART RX (Agent->DUT): 0x45. Pushed to RX Queue. Size: 6
+# [7212330000] [TB_TOP] UART TX Toggled: 0
+# [7221030000] [TB_TOP] UART TX Toggled: 1
+# [7290630000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 7294795282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Error: [FLOW_SCB] TX MISMATCH! Expected: 0x3b | Actual: 0xff
+#    Time: 7294795282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 84
+# [7299330000] [TB_TOP] UART TX Toggled: 1
+# [7368930000] [TB_TOP] UART TX Toggled: 0
+# [7377630000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] UART Driving RX Byte: e3
+# [FLOW_MON] UART Captured RX: e3
+# [FLOW_SCB] UART RX (Agent->DUT): 0xe3. Pushed to RX Queue. Size: 7
+# [FLOW_DRV] APB Driving READ Addr=004
+# [FLOW_MON] APB Captured Addr=004 Data=0x03
+# ** Error: [FLOW_SCB] READ MISMATCH! Addr: 4 | Expected: 0x83 | Actual: 0x03
+#    Time: 7409050 ns  Scope: tb_top_sv_unit.scoreboard.process_apb File: ../tb/env/scoreboard.sv Line: 54
+# [7447230000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 7451395282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Error: [FLOW_SCB] TX MISMATCH! Expected: 0xd3 | Actual: 0xff
+#    Time: 7451395282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 84
+# [7455930000] [TB_TOP] UART TX Toggled: 1
+# [7525530000] [TB_TOP] UART TX Toggled: 0
+# [7534230000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] UART Driving RX Byte: 2e
+# [FLOW_MON] UART Captured RX: 2e
+# [FLOW_SCB] UART RX (Agent->DUT): 0x2e. Pushed to RX Queue. Size: 7
+# [7603830000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 7607995282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Error: [FLOW_SCB] TX MISMATCH! Expected: 0x1d | Actual: 0xff
+#    Time: 7607995282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 84
+# [FLOW_DRV] APB Driving READ Addr=004
+# [FLOW_MON] APB Captured Addr=004 Data=0x1f
+# ** Error: [FLOW_SCB] READ MISMATCH! Addr: 4 | Expected: 0xf9 | Actual: 0x1f
+#    Time: 7609050 ns  Scope: tb_top_sv_unit.scoreboard.process_apb File: ../tb/env/scoreboard.sv Line: 54
+# [7612530000] [TB_TOP] UART TX Toggled: 1
+# [7682130000] [TB_TOP] UART TX Toggled: 0
+# [7690830000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] UART Driving RX Byte: d2
+# [FLOW_MON] UART Captured RX: d2
+# [FLOW_SCB] UART RX (Agent->DUT): 0xd2. Pushed to RX Queue. Size: 7
+# [7760430000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 7764595282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Error: [FLOW_SCB] TX MISMATCH! Expected: 0x41 | Actual: 0xff
+#    Time: 7764595282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 84
+# [7769130000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] APB Driving READ Addr=004
+# [FLOW_MON] APB Captured Addr=004 Data=0x12
+# ** Error: [FLOW_SCB] READ MISMATCH! Addr: 4 | Expected: 0xc5 | Actual: 0x12
+#    Time: 7809050 ns  Scope: tb_top_sv_unit.scoreboard.process_apb File: ../tb/env/scoreboard.sv Line: 54
+# [7838730000] [TB_TOP] UART TX Toggled: 0
+# [7847430000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] UART Driving RX Byte: 0e
+# [FLOW_MON] UART Captured RX: 0e
+# [FLOW_SCB] UART RX (Agent->DUT): 0x0e. Pushed to RX Queue. Size: 7
+# [7917030000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 7921195282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# [FLOW_SCB] TX MATCH! Data: 0xff
+# [7925730000] [TB_TOP] UART TX Toggled: 1
+# [7995330000] [TB_TOP] UART TX Toggled: 0
+# [8004030000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] APB Driving READ Addr=004
+# [FLOW_MON] APB Captured Addr=004 Data=0x1f
+# ** Error: [FLOW_SCB] READ MISMATCH! Addr: 4 | Expected: 0x16 | Actual: 0x1f
+#    Time: 8009050 ns  Scope: tb_top_sv_unit.scoreboard.process_apb File: ../tb/env/scoreboard.sv Line: 54
+# [FLOW_DRV] UART Driving RX Byte: e4
+# [8073630000] [TB_TOP] UART TX Toggled: 0
+# [FLOW_MON] UART Captured RX: e4
+# [FLOW_SCB] UART RX (Agent->DUT): 0xe4. Pushed to RX Queue. Size: 7
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 8077795282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Warning: [FLOW_SCB] Unexpected TX Data from DUT: 0xff (Queue Empty)
+#    Time: 8077795282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 86
+# [8082330000] [TB_TOP] UART TX Toggled: 1
+# [8151930000] [TB_TOP] UART TX Toggled: 0
+# [8160630000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] APB Driving READ Addr=004
+# [FLOW_MON] APB Captured Addr=004 Data=0x02
+# ** Error: [FLOW_SCB] READ MISMATCH! Addr: 4 | Expected: 0xeb | Actual: 0x02
+#    Time: 8209050 ns  Scope: tb_top_sv_unit.scoreboard.process_apb File: ../tb/env/scoreboard.sv Line: 54
+# [8230230000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 8234395282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Warning: [FLOW_SCB] Unexpected TX Data from DUT: 0xff (Queue Empty)
+#    Time: 8234395282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 86
+# [8238930000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] UART Driving RX Byte: aa
+# [FLOW_MON] UART Captured RX: aa
+# [FLOW_SCB] UART RX (Agent->DUT): 0xaa. Pushed to RX Queue. Size: 7
+# [8308530000] [TB_TOP] UART TX Toggled: 0
+# [8317230000] [TB_TOP] UART TX Toggled: 1
+# [8386830000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 8390995282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Warning: [FLOW_SCB] Unexpected TX Data from DUT: 0xff (Queue Empty)
+#    Time: 8390995282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 86
+# [8395530000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] APB Driving READ Addr=004
+# [FLOW_MON] APB Captured Addr=004 Data=0x0e
+# ** Error: [FLOW_SCB] READ MISMATCH! Addr: 4 | Expected: 0x45 | Actual: 0x0e
+#    Time: 8409050 ns  Scope: tb_top_sv_unit.scoreboard.process_apb File: ../tb/env/scoreboard.sv Line: 54
+# [FLOW_DRV] UART Driving RX Byte: 2e
+# [FLOW_MON] UART Captured RX: 2e
+# [FLOW_SCB] UART RX (Agent->DUT): 0x2e. Pushed to RX Queue. Size: 7
+# [8465130000] [TB_TOP] UART TX Toggled: 0
+# [8473830000] [TB_TOP] UART TX Toggled: 1
+# [8543430000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 8547595282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Warning: [FLOW_SCB] Unexpected TX Data from DUT: 0xff (Queue Empty)
+#    Time: 8547595282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 86
+# [8552130000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] UART Driving RX Byte: 01
+# [FLOW_MON] UART Captured RX: 01
+# [FLOW_SCB] UART RX (Agent->DUT): 0x01. Pushed to RX Queue. Size: 8
+# [FLOW_DRV] APB Driving READ Addr=004
+# [FLOW_MON] APB Captured Addr=004 Data=0x01
+# ** Error: [FLOW_SCB] READ MISMATCH! Addr: 4 | Expected: 0xe3 | Actual: 0x01
+#    Time: 8609050 ns  Scope: tb_top_sv_unit.scoreboard.process_apb File: ../tb/env/scoreboard.sv Line: 54
+# [8621730000] [TB_TOP] UART TX Toggled: 0
+# [8630430000] [TB_TOP] UART TX Toggled: 1
+# [8700030000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 8704195282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Warning: [FLOW_SCB] Unexpected TX Data from DUT: 0xff (Queue Empty)
+#    Time: 8704195282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 86
+# [8708730000] [TB_TOP] UART TX Toggled: 1
+# [8778330000] [TB_TOP] UART TX Toggled: 0
+# [8787030000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] APB Driving READ Addr=004
+# [FLOW_MON] APB Captured Addr=004 Data=0x1f
+# ** Error: [FLOW_SCB] READ MISMATCH! Addr: 4 | Expected: 0x2e | Actual: 0x1f
+#    Time: 8809050 ns  Scope: tb_top_sv_unit.scoreboard.process_apb File: ../tb/env/scoreboard.sv Line: 54
+# [8856630000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 8860795282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Warning: [FLOW_SCB] Unexpected TX Data from DUT: 0xff (Queue Empty)
+#    Time: 8860795282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 86
+# [8865330000] [TB_TOP] UART TX Toggled: 1
+# [8934930000] [TB_TOP] UART TX Toggled: 0
+# [8943630000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] APB Driving READ Addr=004
+# [FLOW_MON] APB Captured Addr=004 Data=0x1f
+# ** Error: [FLOW_SCB] READ MISMATCH! Addr: 4 | Expected: 0xd2 | Actual: 0x1f
+#    Time: 9009050 ns  Scope: tb_top_sv_unit.scoreboard.process_apb File: ../tb/env/scoreboard.sv Line: 54
+# [9013230000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 9017395282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Warning: [FLOW_SCB] Unexpected TX Data from DUT: 0xff (Queue Empty)
+#    Time: 9017395282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 86
+# [9021930000] [TB_TOP] UART TX Toggled: 1
+# [9091530000] [TB_TOP] UART TX Toggled: 0
+# [9100230000] [TB_TOP] UART TX Toggled: 1
+# [9169830000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 9173995282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Warning: [FLOW_SCB] Unexpected TX Data from DUT: 0xff (Queue Empty)
+#    Time: 9173995282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 86
+# [9178530000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] APB Driving READ Addr=004
+# [FLOW_MON] APB Captured Addr=004 Data=0x1f
+# ** Error: [FLOW_SCB] READ MISMATCH! Addr: 4 | Expected: 0x0e | Actual: 0x1f
+#    Time: 9209050 ns  Scope: tb_top_sv_unit.scoreboard.process_apb File: ../tb/env/scoreboard.sv Line: 54
+# [9248130000] [TB_TOP] UART TX Toggled: 0
+# [9256830000] [TB_TOP] UART TX Toggled: 1
+# [9326430000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 9330595282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Warning: [FLOW_SCB] Unexpected TX Data from DUT: 0xff (Queue Empty)
+#    Time: 9330595282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 86
+# [9335130000] [TB_TOP] UART TX Toggled: 1
+# [9404730000] [TB_TOP] UART TX Toggled: 0
+# [FLOW_DRV] APB Driving READ Addr=004
+# [FLOW_MON] APB Captured Addr=004 Data=0x1f
+# ** Error: [FLOW_SCB] READ MISMATCH! Addr: 4 | Expected: 0xe4 | Actual: 0x1f
+#    Time: 9409050 ns  Scope: tb_top_sv_unit.scoreboard.process_apb File: ../tb/env/scoreboard.sv Line: 54
+# [9413430000] [TB_TOP] UART TX Toggled: 1
+# [9483030000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 9487195282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Warning: [FLOW_SCB] Unexpected TX Data from DUT: 0xff (Queue Empty)
+#    Time: 9487195282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 86
+# [9491730000] [TB_TOP] UART TX Toggled: 1
+# [9561330000] [TB_TOP] UART TX Toggled: 0
+# [9570030000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] APB Driving READ Addr=004
+# [FLOW_MON] APB Captured Addr=004 Data=0x1f
+# ** Error: [FLOW_SCB] READ MISMATCH! Addr: 4 | Expected: 0xaa | Actual: 0x1f
+#    Time: 9609050 ns  Scope: tb_top_sv_unit.scoreboard.process_apb File: ../tb/env/scoreboard.sv Line: 54
+# [9639630000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 9643795282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Warning: [FLOW_SCB] Unexpected TX Data from DUT: 0xff (Queue Empty)
+#    Time: 9643795282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 86
+# [9648330000] [TB_TOP] UART TX Toggled: 1
+# [9717930000] [TB_TOP] UART TX Toggled: 0
+# [9726630000] [TB_TOP] UART TX Toggled: 1
+# [9796230000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 9800395282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Warning: [FLOW_SCB] Unexpected TX Data from DUT: 0xff (Queue Empty)
+#    Time: 9800395282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 86
+# [9804930000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] APB Driving READ Addr=004
+# [FLOW_MON] APB Captured Addr=004 Data=0x1f
+# ** Error: [FLOW_SCB] READ MISMATCH! Addr: 4 | Expected: 0x2e | Actual: 0x1f
+#    Time: 9809050 ns  Scope: tb_top_sv_unit.scoreboard.process_apb File: ../tb/env/scoreboard.sv Line: 54
+# [9874530000] [TB_TOP] UART TX Toggled: 0
+# [9883230000] [TB_TOP] UART TX Toggled: 1
+# [9952830000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 9956995282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Warning: [FLOW_SCB] Unexpected TX Data from DUT: 0xff (Queue Empty)
+#    Time: 9956995282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 86
+# [9961530000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] APB Driving READ Addr=004
+# [FLOW_MON] APB Captured Addr=004 Data=0x1f
+# ** Error: [FLOW_SCB] READ MISMATCH! Addr: 4 | Expected: 0x01 | Actual: 0x1f
+#    Time: 10009050 ns  Scope: tb_top_sv_unit.scoreboard.process_apb File: ../tb/env/scoreboard.sv Line: 54
+# [10031130000] [TB_TOP] UART TX Toggled: 0
+# [10039830000] [TB_TOP] UART TX Toggled: 1
+# [10109430000] [TB_TOP] UART TX Toggled: 0
+# ** Warning: [uart_mon] Framing Error on TX! Expected Stop Bit=1, got 0. Data: ff
+#    Time: 10113595282 ps  Scope: tb_top_sv_unit.uart_monitor.monitor_tx File: ../tb/uart_agent/uart_monitor.sv Line: 60
+# ** Warning: [FLOW_SCB] Unexpected TX Data from DUT: 0xff (Queue Empty)
+#    Time: 10113595282 ps  Scope: tb_top_sv_unit.scoreboard.process_uart File: ../tb/env/scoreboard.sv Line: 86
+# [10118130000] [TB_TOP] UART TX Toggled: 1
+# [10187730000] [TB_TOP] UART TX Toggled: 0
+# [10196430000] [TB_TOP] UART TX Toggled: 1
+# 
+# [REGRESSION] >>> Running TEST_FIFO <<<
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=548d17c1
+# [FLOW_MON] APB Captured Addr=000 Data=0xc1
+# [FLOW_SCB] APB Write TX Data: 0xc1. Queue size: 1
+# [10209050000] [TB_TOP] UART TX Toggled: 0
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=bcaffcaf
+# [FLOW_MON] APB Captured Addr=000 Data=0xaf
+# [FLOW_SCB] APB Write TX Data: 0xaf. Queue size: 2
+# [10209110000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=c3340a08
+# [FLOW_MON] APB Captured Addr=000 Data=0x08
+# [FLOW_SCB] APB Write TX Data: 0x08. Queue size: 3
+# [10209170000] [TB_TOP] UART TX Toggled: 0
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=c096f5c6
+# [FLOW_MON] APB Captured Addr=000 Data=0xc6
+# [FLOW_SCB] APB Write TX Data: 0xc6. Queue size: 4
+# [10209230000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=36653234
+# [FLOW_MON] APB Captured Addr=000 Data=0x34
+# [FLOW_SCB] APB Write TX Data: 0x34. Queue size: 5
+# [10209290000] [TB_TOP] UART TX Toggled: 0
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=02d4883b
+# [FLOW_MON] APB Captured Addr=000 Data=0x3b
+# [FLOW_SCB] APB Write TX Data: 0x3b. Queue size: 6
+# [10209350000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=2355715a
+# [FLOW_MON] APB Captured Addr=000 Data=0x5a
+# [FLOW_SCB] APB Write TX Data: 0x5a. Queue size: 7
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=4293916e
+# [FLOW_MON] APB Captured Addr=000 Data=0x6e
+# [FLOW_SCB] APB Write TX Data: 0x6e. Queue size: 8
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=19cd824e
+# [FLOW_MON] APB Captured Addr=000 Data=0x4e
+# [FLOW_SCB] APB Write TX Data: 0x4e. Queue size: 9
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=6ea9144c
+# [FLOW_MON] APB Captured Addr=000 Data=0x4c
+# [FLOW_SCB] APB Write TX Data: 0x4c. Queue size: 10
+# [10209590000] [TB_TOP] UART TX Toggled: 0
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=d6caf09c
+# [FLOW_MON] APB Captured Addr=000 Data=0x9c
+# [FLOW_SCB] APB Write TX Data: 0x9c. Queue size: 11
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=a1a473dc
+# [FLOW_MON] APB Captured Addr=000 Data=0xdc
+# [FLOW_SCB] APB Write TX Data: 0xdc. Queue size: 12
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=b70222bf
+# [FLOW_MON] APB Captured Addr=000 Data=0xbf
+# [FLOW_SCB] APB Write TX Data: 0xbf. Queue size: 13
+# [10209770000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=3b4b3034
+# [FLOW_MON] APB Captured Addr=000 Data=0x34
+# [FLOW_SCB] APB Write TX Data: 0x34. Queue size: 14
+# [10209830000] [TB_TOP] UART TX Toggled: 0
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=cf372a15
+# [FLOW_MON] APB Captured Addr=000 Data=0x15
+# [FLOW_SCB] APB Write TX Data: 0x15. Queue size: 15
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=a0f15601
+# [FLOW_MON] APB Captured Addr=000 Data=0x01
+# [FLOW_SCB] APB Write TX Data: 0x01. Queue size: 16
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=7acec8b4
+# [FLOW_MON] APB Captured Addr=000 Data=0xb4
+# [FLOW_SCB] APB Write TX Data: 0xb4. Queue size: 17
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=11361caa
+# [FLOW_MON] APB Captured Addr=000 Data=0xaa
+# [FLOW_SCB] APB Write TX Data: 0xaa. Queue size: 18
+# [10210070000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=1748a78e
+# [FLOW_MON] APB Captured Addr=000 Data=0x8e
+# [FLOW_SCB] APB Write TX Data: 0x8e. Queue size: 19
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=c42e7a40
+# [FLOW_MON] APB Captured Addr=000 Data=0x40
+# [FLOW_SCB] APB Write TX Data: 0x40. Queue size: 20
+# [10210190000] [TB_TOP] UART TX Toggled: 0
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=45d23e7a
+# [FLOW_MON] APB Captured Addr=000 Data=0x7a
+# [FLOW_SCB] APB Write TX Data: 0x7a. Queue size: 21
+# [10210250000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=f29cb3ca
+# [FLOW_MON] APB Captured Addr=000 Data=0xca
+# [FLOW_SCB] APB Write TX Data: 0xca. Queue size: 22
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=ef5eb0e8
+# [FLOW_MON] APB Captured Addr=000 Data=0xe8
+# [FLOW_SCB] APB Write TX Data: 0xe8. Queue size: 23
+# [10210370000] [TB_TOP] UART TX Toggled: 0
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=4589c42c
+# [FLOW_MON] APB Captured Addr=000 Data=0x2c
+# [FLOW_SCB] APB Write TX Data: 0x2c. Queue size: 24
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=98072d22
+# [FLOW_MON] APB Captured Addr=000 Data=0x22
+# [FLOW_SCB] APB Write TX Data: 0x22. Queue size: 25
+# [10210490000] [TB_TOP] UART TX Toggled: 1
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=ea42daff
+# [FLOW_MON] APB Captured Addr=000 Data=0xff
+# [FLOW_SCB] APB Write TX Data: 0xff. Queue size: 26
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=ce03f303
+# [FLOW_MON] APB Captured Addr=000 Data=0x03
+# [FLOW_SCB] APB Write TX Data: 0x03. Queue size: 27
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=5953a7c7
+# [FLOW_MON] APB Captured Addr=000 Data=0xc7
+# [FLOW_SCB] APB Write TX Data: 0xc7. Queue size: 28
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=0bb24a85
+# [FLOW_MON] APB Captured Addr=000 Data=0x85
+# [FLOW_SCB] APB Write TX Data: 0x85. Queue size: 29
+# [10210730000] [TB_TOP] UART TX Toggled: 0
+# [FLOW_DRV] APB Driving WRITE Addr=000 Data=232b341a
+# [FLOW_MON] APB Captured Addr=000 Data=0x1a
+# [FLOW_SCB] APB Write TX Data: 0x1a. Queue size: 30
+# [10210790000] [TB_TOP] UART TX Toggled: 1
+# [10213830000] [TB_TOP] UART TX Toggled: 0
+# 
+# [REGRESSION] All tests completed.
+# ** Note: $finish    : ../tb/test/test_full_regression.sv(129)
+#    Time: 10214 us  Iteration: 0  Instance: /tb_top
+# Break in Task tb_top_sv_unit/test_full_regression::run at ../tb/test/test_full_regression.sv line 129
+# Stopped at ../tb/test/test_full_regression.sv line 129
+# Saving coverage database on exit...
+# End time: 09:22:49 on Jan 27,2026, Elapsed time: 0:00:03
+# Errors: 100, Warnings: 81

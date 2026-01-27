@@ -11,9 +11,10 @@
 `include "test_rx.sv"
 `include "test_flow_control.sv"
 `include "test_error_injection.sv"
+`include "test_config_modes.sv"
+`include "test_reset_stress.sv"
+`include "test_full_regression.sv"
 `include "test_fifo.sv"
-
-//`include "../rtl/uart.sv"
 
 module tb_top;
 
@@ -26,12 +27,12 @@ module tb_top;
 
     initial begin
         pclk = 1'b0;
-        forever #5 pclk = ~pclk;
+        forever #10 pclk = ~pclk;
     end
 
     initial begin
         uart_clk = 1'b0;
-        forever #5 uart_clk = ~uart_clk;
+        forever #10 uart_clk = ~uart_clk;
     end
 
     initial begin
@@ -43,21 +44,27 @@ module tb_top;
         preset_n = 1'b1;
     end
 
-  // For this skeleton, use uart_clk as the UART core clock
-  assign clk = uart_clk;
+    // For this skeleton, use uart_clk as the UART core clock
+    assign clk = uart_clk;
 
-  // Interfaces
-  apb_if  apb_if_i (pclk, preset_n);
-  uart_if uart_if_i (uart_clk);
+    // Interfaces
+    apb_if  apb_if_i (pclk, preset_n);
+    uart_if uart_if_i (uart_clk);
 
-  // Default strobes/flow-control
+    // Default strobes/flow-control
     initial begin
         apb_if_i.pstrb = 4'hF;
         uart_if_i.cts_n = 1'b0; // allow transmit by default (active-low)
         uart_if_i.rx    = 1'b1; // idle high
+        uart_if_i.rx    = 1'b1; // idle high
     end
 
-    // DUT
+    // Monitor for debug
+    initial begin
+        $monitor("[%0t] [TB_TOP] UART TX Toggled: %b", $time, uart_if_i.tx);
+    end
+
+    // DUT (Đảm bảo tên module uart khớp với file RTL của Đại ca)
     uart dut (
         .clk     (clk),
         .reset_n (reset_n),
@@ -86,14 +93,16 @@ module tb_top;
 
     initial begin
         env = new("env");
-        // Manually assign interfaces and explicit config since build() takes no args
-        env.apb_vif_drv   = apb_if_i.TB_DRV;
-        env.apb_vif_mon   = apb_if_i.TB_MON;
-        env.uart_vif_drv  = uart_if_i.TB_DRV;
-        env.uart_vif_mon  = uart_if_i.TB_MON;
-        env.pclk_ref      = pclk;
+    
+        // Gán trực tiếp Interface, bỏ qua Modport để tránh lỗi type cast
+        // Và bỏ dòng gán pclk_ref vì Env mới không dùng nữa.
+        env.apb_vif_drv   = apb_if_i;
+        env.apb_vif_mon   = apb_if_i;
+        env.uart_vif_drv  = uart_if_i;
+        env.uart_vif_mon  = uart_if_i;
         
         env.build();
+        // ---------------------------------------------
 
         if (!$value$plusargs("TESTNAME=%s", test_name)) begin
             test_name = "test_sanity";
@@ -128,6 +137,21 @@ module tb_top;
                 t = new();
                 test = t;
             end
+            "test_config_modes": begin
+                test_config_modes t;
+                t = new();
+                test = t;
+            end
+            "test_full_regression": begin
+                test_full_regression t;
+                t = new();
+                test = t;
+            end
+            "test_reset_stress": begin
+                test_reset_stress t;
+                t = new();
+                test = t;
+            end
             "test_fifo": begin
                 test_fifo t;
                 t = new();
@@ -146,4 +170,3 @@ module tb_top;
     end
 
 endmodule
-
