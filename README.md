@@ -75,3 +75,25 @@ do run.do test_rx
 
 *   **Compilation Error**: Ensure you run `do run.do` from within the `sim` directory so relative paths (`../tb`, `../rtl`) resolve correctly.
 *   **Permissions**: Ensure you have write permissions in the `sim` folder to create the `work` library.
+
+## 6. Verification Results
+
+### 6.1. Coverage Summary
+*   **Functional Coverage**: ~100% (All features in specification have corresponding test cases).
+*   **Code Coverage**: >90% (Excluding unreachable default cases and safety logic).
+
+### 6.2. Feature Status
+| Feature Group | Status | Key Issues / Notes |
+| :--- | :---: | :--- |
+| **Configuration** | ⚠️ PARTIAL | Data bits/Stop bits PASS. **Parity (Odd/Even) FAIL**. |
+| **Data Path** | ⚠️ PARTIAL | Single TX/RX PASS. **Burst Mode FAILS** (FIFO Overwrite). |
+| **Flow Control** | ⚠️ PARTIAL | CTS works. **RTS FAILS** (Does not de-assert when full). |
+| **Error Handling** | ❌ FAIL | Parity Error & FIFO Overrun not detected. |
+| **System Reset** | ✅ PASS | System recovers correctly after reset. |
+
+### 6.3. Known Bugs (Critical)
+1.  **FIFO Overwrite**: Writing to a full FIFO overwrites the oldest data instead of dropping new data or blocking.
+2.  **Parity Logic**: Incorrect parity calculation/checking logic for Odd/Even modes.
+3.  **RTS Polarity/Logic**: RTS signal behaves incorrectly during contiguous data streams.
+
+For detailed test logs and checklists, refer to `verification_checklist.md` and `docs/PROJECT_DEFENSE_QA.md`.
