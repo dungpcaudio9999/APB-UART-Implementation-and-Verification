@@ -1,0 +1,327 @@
+QuestaSim-64 vcover 10.7c Coverage Utility 2018.08 Aug 18 2018
+Start time: 17:10:52 on Jan 26,2026
+vcover report -cvg -details coverage_db/merged_coverage.ucdb 
+COVERGROUP COVERAGE:
+-----------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal    Status               
+                                                                                              
+-----------------------------------------------------------------------------------------------
+ TYPE /tb_top_sv_unit/coverage_collector/cg_apb        90.00%        100    Uncovered            
+    covered/total bins:                                    14         17                      
+    missing/total bins:                                     3         17                      
+    % Hit:                                             82.35%        100                      
+    Coverpoint cg_apb::cp_addr                        100.00%        100    Covered              
+        covered/total bins:                                 5          5                      
+        missing/total bins:                                 0          5                      
+        % Hit:                                        100.00%        100                      
+        bin tx_reg                                        118          1    Covered              
+        bin rx_reg                                        105          1    Covered              
+        bin config_reg                                      8          1    Covered              
+        bin status_reg                                      4          1    Covered              
+        bin control_reg                                    14          1    Covered              
+    Coverpoint cg_apb::cp_write                       100.00%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                        100.00%        100                      
+        bin read                                          111          1    Covered              
+        bin write                                         138          1    Covered              
+    Cross cg_apb::cross_addr_rw                        70.00%        100    Uncovered            
+        covered/total bins:                                 7         10                      
+        missing/total bins:                                 3         10                      
+        % Hit:                                         70.00%        100                      
+        bin <rx_reg,read>                                 105          1    Covered              
+        bin <status_reg,read>                               4          1    Covered              
+        bin <config_reg,write>                              7          1    Covered              
+        bin <tx_reg,write>                                118          1    Covered              
+        bin <control_reg,write>                            13          1    Covered              
+        bin <config_reg,read>                               1          1    Covered              
+        bin <control_reg,read>                              1          1    Covered              
+        bin <tx_reg,read>                                   0          1    ZERO                 
+        bin <rx_reg,write>                                  0          1    ZERO                 
+        bin <status_reg,write>                              0          1    ZERO                 
+ Covergroup instance cg_apb                            90.00%        100    Uncovered            
+    covered/total bins:                                    14         17                      
+    missing/total bins:                                     3         17                      
+    % Hit:                                             82.35%        100                      
+    Coverpoint cp_addr                                100.00%        100    Covered              
+        covered/total bins:                                 5          5                      
+        missing/total bins:                                 0          5                      
+        % Hit:                                        100.00%        100                      
+        bin tx_reg                                        118          1    Covered              
+        bin rx_reg                                        105          1    Covered              
+        bin config_reg                                      8          1    Covered              
+        bin status_reg                                      4          1    Covered              
+        bin control_reg                                    14          1    Covered              
+    Coverpoint cp_write                               100.00%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                        100.00%        100                      
+        bin read                                          111          1    Covered              
+        bin write                                         138          1    Covered              
+    Cross cross_addr_rw                                70.00%        100    Uncovered            
+        covered/total bins:                                 7         10                      
+        missing/total bins:                                 3         10                      
+        % Hit:                                         70.00%        100                      
+        bin <rx_reg,read>                                 105          1    Covered              
+        bin <status_reg,read>                               4          1    Covered              
+        bin <config_reg,write>                              7          1    Covered              
+        bin <tx_reg,write>                                118          1    Covered              
+        bin <control_reg,write>                            13          1    Covered              
+        bin <config_reg,read>                               1          1    Covered              
+        bin <control_reg,read>                              1          1    Covered              
+        bin <tx_reg,read>                                   0          1    ZERO                 
+        bin <rx_reg,write>                                  0          1    ZERO                 
+        bin <status_reg,write>                              0          1    ZERO                 
+ TYPE /tb_top_sv_unit/coverage_collector/cg_uart_cfg 
+                                                       46.25%        100    Uncovered            
+    covered/total bins:                                     7         42                      
+    missing/total bins:                                    35         42                      
+    % Hit:                                             16.66%        100                      
+    Coverpoint cg_uart_cfg::cp_data_width              25.00%        100    Uncovered            
+        covered/total bins:                                 1          4                      
+        missing/total bins:                                 3          4                      
+        % Hit:                                         25.00%        100                      
+        bin width_5                                         0          1    ZERO                 
+        bin width_6                                         0          1    ZERO                 
+        bin width_7                                         0          1    ZERO                 
+        bin width_8                                         7          1    Covered              
+    Coverpoint cg_uart_cfg::cp_parity_en              100.00%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                        100.00%        100                      
+        bin disabled                                        6          1    Covered              
+        bin enabled                                         1          1    Covered              
+    Coverpoint cg_uart_cfg::cp_parity_type             50.00%        100    Uncovered            
+        covered/total bins:                                 1          2                      
+        missing/total bins:                                 1          2                      
+        % Hit:                                         50.00%        100                      
+        bin even                                            7          1    Covered              
+        bin odd                                             0          1    ZERO                 
+    Coverpoint cg_uart_cfg::cp_stop_bits               50.00%        100    Uncovered            
+        covered/total bins:                                 1          2                      
+        missing/total bins:                                 1          2                      
+        % Hit:                                         50.00%        100                      
+        bin stop_1                                          7          1    Covered              
+        bin stop_2                                          0          1    ZERO                 
+    Cross cg_uart_cfg::cross_all_cfg                    6.25%        100    Uncovered            
+        covered/total bins:                                 2         32                      
+        missing/total bins:                                30         32                      
+        % Hit:                                          6.25%        100                      
+        bin <width_8,enabled,even,stop_1>                   1          1    Covered              
+        bin <width_8,disabled,even,stop_1>                  6          1    Covered              
+        bin <width_5,disabled,even,stop_1>                  0          1    ZERO                 
+        bin <width_6,disabled,even,stop_1>                  0          1    ZERO                 
+        bin <width_7,disabled,even,stop_1>                  0          1    ZERO                 
+        bin <width_5,enabled,even,stop_1>                   0          1    ZERO                 
+        bin <width_6,enabled,even,stop_1>                   0          1    ZERO                 
+        bin <width_7,enabled,even,stop_1>                   0          1    ZERO                 
+        bin <width_5,disabled,odd,stop_1>                   0          1    ZERO                 
+        bin <width_6,disabled,odd,stop_1>                   0          1    ZERO                 
+        bin <width_7,disabled,odd,stop_1>                   0          1    ZERO                 
+        bin <width_8,disabled,odd,stop_1>                   0          1    ZERO                 
+        bin <width_5,enabled,odd,stop_1>                    0          1    ZERO                 
+        bin <width_6,enabled,odd,stop_1>                    0          1    ZERO                 
+        bin <width_7,enabled,odd,stop_1>                    0          1    ZERO                 
+        bin <width_8,enabled,odd,stop_1>                    0          1    ZERO                 
+        bin <width_5,disabled,even,stop_2>                  0          1    ZERO                 
+        bin <width_6,disabled,even,stop_2>                  0          1    ZERO                 
+        bin <width_7,disabled,even,stop_2>                  0          1    ZERO                 
+        bin <width_8,disabled,even,stop_2>                  0          1    ZERO                 
+        bin <width_5,enabled,even,stop_2>                   0          1    ZERO                 
+        bin <width_6,enabled,even,stop_2>                   0          1    ZERO                 
+        bin <width_7,enabled,even,stop_2>                   0          1    ZERO                 
+        bin <width_8,enabled,even,stop_2>                   0          1    ZERO                 
+        bin <width_5,disabled,odd,stop_2>                   0          1    ZERO                 
+        bin <width_6,disabled,odd,stop_2>                   0          1    ZERO                 
+        bin <width_7,disabled,odd,stop_2>                   0          1    ZERO                 
+        bin <width_8,disabled,odd,stop_2>                   0          1    ZERO                 
+        bin <width_5,enabled,odd,stop_2>                    0          1    ZERO                 
+        bin <width_6,enabled,odd,stop_2>                    0          1    ZERO                 
+        bin <width_7,enabled,odd,stop_2>                    0          1    ZERO                 
+        bin <width_8,enabled,odd,stop_2>                    0          1    ZERO                 
+ Covergroup instance cg_uart_cfg                       46.25%        100    Uncovered            
+    covered/total bins:                                     7         42                      
+    missing/total bins:                                    35         42                      
+    % Hit:                                             16.66%        100                      
+    Coverpoint cp_data_width                           25.00%        100    Uncovered            
+        covered/total bins:                                 1          4                      
+        missing/total bins:                                 3          4                      
+        % Hit:                                         25.00%        100                      
+        bin width_5                                         0          1    ZERO                 
+        bin width_6                                         0          1    ZERO                 
+        bin width_7                                         0          1    ZERO                 
+        bin width_8                                         7          1    Covered              
+    Coverpoint cp_parity_en                           100.00%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                        100.00%        100                      
+        bin disabled                                        6          1    Covered              
+        bin enabled                                         1          1    Covered              
+    Coverpoint cp_parity_type                          50.00%        100    Uncovered            
+        covered/total bins:                                 1          2                      
+        missing/total bins:                                 1          2                      
+        % Hit:                                         50.00%        100                      
+        bin even                                            7          1    Covered              
+        bin odd                                             0          1    ZERO                 
+    Coverpoint cp_stop_bits                            50.00%        100    Uncovered            
+        covered/total bins:                                 1          2                      
+        missing/total bins:                                 1          2                      
+        % Hit:                                         50.00%        100                      
+        bin stop_1                                          7          1    Covered              
+        bin stop_2                                          0          1    ZERO                 
+    Cross cross_all_cfg                                 6.25%        100    Uncovered            
+        covered/total bins:                                 2         32                      
+        missing/total bins:                                30         32                      
+        % Hit:                                          6.25%        100                      
+        bin <width_8,enabled,even,stop_1>                   1          1    Covered              
+        bin <width_8,disabled,even,stop_1>                  6          1    Covered              
+        bin <width_5,disabled,even,stop_1>                  0          1    ZERO                 
+        bin <width_6,disabled,even,stop_1>                  0          1    ZERO                 
+        bin <width_7,disabled,even,stop_1>                  0          1    ZERO                 
+        bin <width_5,enabled,even,stop_1>                   0          1    ZERO                 
+        bin <width_6,enabled,even,stop_1>                   0          1    ZERO                 
+        bin <width_7,enabled,even,stop_1>                   0          1    ZERO                 
+        bin <width_5,disabled,odd,stop_1>                   0          1    ZERO                 
+        bin <width_6,disabled,odd,stop_1>                   0          1    ZERO                 
+        bin <width_7,disabled,odd,stop_1>                   0          1    ZERO                 
+        bin <width_8,disabled,odd,stop_1>                   0          1    ZERO                 
+        bin <width_5,enabled,odd,stop_1>                    0          1    ZERO                 
+        bin <width_6,enabled,odd,stop_1>                    0          1    ZERO                 
+        bin <width_7,enabled,odd,stop_1>                    0          1    ZERO                 
+        bin <width_8,enabled,odd,stop_1>                    0          1    ZERO                 
+        bin <width_5,disabled,even,stop_2>                  0          1    ZERO                 
+        bin <width_6,disabled,even,stop_2>                  0          1    ZERO                 
+        bin <width_7,disabled,even,stop_2>                  0          1    ZERO                 
+        bin <width_8,disabled,even,stop_2>                  0          1    ZERO                 
+        bin <width_5,enabled,even,stop_2>                   0          1    ZERO                 
+        bin <width_6,enabled,even,stop_2>                   0          1    ZERO                 
+        bin <width_7,enabled,even,stop_2>                   0          1    ZERO                 
+        bin <width_8,enabled,even,stop_2>                   0          1    ZERO                 
+        bin <width_5,disabled,odd,stop_2>                   0          1    ZERO                 
+        bin <width_6,disabled,odd,stop_2>                   0          1    ZERO                 
+        bin <width_7,disabled,odd,stop_2>                   0          1    ZERO                 
+        bin <width_8,disabled,odd,stop_2>                   0          1    ZERO                 
+        bin <width_5,enabled,odd,stop_2>                    0          1    ZERO                 
+        bin <width_6,enabled,odd,stop_2>                    0          1    ZERO                 
+        bin <width_7,enabled,odd,stop_2>                    0          1    ZERO                 
+        bin <width_8,enabled,odd,stop_2>                    0          1    ZERO                 
+ TYPE /tb_top_sv_unit/coverage_collector/cg_uart_data 
+                                                       77.77%        100    Uncovered            
+    covered/total bins:                                    13         20                      
+    missing/total bins:                                     7         20                      
+    % Hit:                                             65.00%        100                      
+    Coverpoint cg_uart_data::cp_dir                   100.00%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                        100.00%        100                      
+        bin tx                                             45          1    Covered              
+        bin rx                                            103          1    Covered              
+    Coverpoint cg_uart_data::cp_data                   83.33%        100    Uncovered            
+        covered/total bins:                                 5          6                      
+        missing/total bins:                                 1          6                      
+        % Hit:                                         83.33%        100                      
+        bin zeros                                           1          1    Covered              
+        bin ones                                            0          1    ZERO                 
+        bin aa                                              1          1    Covered              
+        bin five                                            1          1    Covered              
+        bin low                                             9          1    Covered              
+        bin high                                            6          1    Covered              
+        default bin others                                131               Occurred             
+    Cross cg_uart_data::cross_dir_data                 50.00%        100    Uncovered            
+        covered/total bins:                                 6         12                      
+        missing/total bins:                                 6         12                      
+        % Hit:                                         50.00%        100                      
+        bin <rx,five>                                       1          1    Covered              
+        bin <rx,zeros>                                      1          1    Covered              
+        bin <rx,low>                                        8          1    Covered              
+        bin <rx,high>                                       6          1    Covered              
+        bin <rx,aa>                                         1          1    Covered              
+        bin <tx,low>                                        1          1    Covered              
+        bin <tx,zeros>                                      0          1    ZERO                 
+        bin <tx,ones>                                       0          1    ZERO                 
+        bin <rx,ones>                                       0          1    ZERO                 
+        bin <tx,aa>                                         0          1    ZERO                 
+        bin <tx,five>                                       0          1    ZERO                 
+        bin <tx,high>                                       0          1    ZERO                 
+ Covergroup instance cg_uart_data                      77.77%        100    Uncovered            
+    covered/total bins:                                    13         20                      
+    missing/total bins:                                     7         20                      
+    % Hit:                                             65.00%        100                      
+    Coverpoint cp_dir                                 100.00%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                        100.00%        100                      
+        bin tx                                             45          1    Covered              
+        bin rx                                            103          1    Covered              
+    Coverpoint cp_data                                 83.33%        100    Uncovered            
+        covered/total bins:                                 5          6                      
+        missing/total bins:                                 1          6                      
+        % Hit:                                         83.33%        100                      
+        bin zeros                                           1          1    Covered              
+        bin ones                                            0          1    ZERO                 
+        bin aa                                              1          1    Covered              
+        bin five                                            1          1    Covered              
+        bin low                                             9          1    Covered              
+        bin high                                            6          1    Covered              
+        default bin others                                131               Occurred             
+    Cross cross_dir_data                               50.00%        100    Uncovered            
+        covered/total bins:                                 6         12                      
+        missing/total bins:                                 6         12                      
+        % Hit:                                         50.00%        100                      
+        bin <rx,five>                                       1          1    Covered              
+        bin <rx,zeros>                                      1          1    Covered              
+        bin <rx,low>                                        8          1    Covered              
+        bin <rx,high>                                       6          1    Covered              
+        bin <rx,aa>                                         1          1    Covered              
+        bin <tx,low>                                        1          1    Covered              
+        bin <tx,zeros>                                      0          1    ZERO                 
+        bin <tx,ones>                                       0          1    ZERO                 
+        bin <rx,ones>                                       0          1    ZERO                 
+        bin <tx,aa>                                         0          1    ZERO                 
+        bin <tx,five>                                       0          1    ZERO                 
+        bin <tx,high>                                       0          1    ZERO                 
+ TYPE /tb_top_sv_unit/coverage_collector/cg_internal_fsm 
+                                                      100.00%        100    Covered              
+    covered/total bins:                                    16         16                      
+    missing/total bins:                                     0         16                      
+    % Hit:                                            100.00%        100                      
+    Coverpoint cg_internal_fsm::cp_tx_state           100.00%        100    Covered              
+        covered/total bins:                                 8          8                      
+        missing/total bins:                                 0          8                      
+        % Hit:                                        100.00%        100                      
+    Coverpoint cg_internal_fsm::cp_rx_state           100.00%        100    Covered              
+        covered/total bins:                                 8          8                      
+        missing/total bins:                                 0          8                      
+        % Hit:                                        100.00%        100                      
+ Covergroup instance cg_internal_fsm                  100.00%        100    Covered              
+    covered/total bins:                                    16         16                      
+    missing/total bins:                                     0         16                      
+    % Hit:                                            100.00%        100                      
+    Coverpoint cp_tx_state                            100.00%        100    Covered              
+        covered/total bins:                                 8          8                      
+        missing/total bins:                                 0          8                      
+        % Hit:                                        100.00%        100                      
+        bin idle                                       679891          1    Covered              
+        bin start                                       77430          1    Covered              
+        bin data                                       447188          1    Covered              
+        bin par_stop                                   132791          1    Covered              
+        bin trans_idle_start                              178          1    Covered              
+        bin trans_start_data                              178          1    Covered              
+        bin trans_data_stop                               177          1    Covered              
+        bin trans_stop_idle                               175          1    Covered              
+    Coverpoint cp_rx_state                            100.00%        100    Covered              
+        covered/total bins:                                 8          8                      
+        missing/total bins:                                 0          8                      
+        % Hit:                                        100.00%        100                      
+        bin start_check                                 51900          1    Covered              
+        bin data                                       357056          1    Covered              
+        bin stop_check                                  89600          1    Covered              
+        bin idle                                       838744          1    Covered              
+        bin trans_idle_start                              121          1    Covered              
+        bin trans_start_data                              127          1    Covered              
+        bin trans_data_stop                               127          1    Covered              
+        bin trans_stop_idle                               127          1    Covered              
+
+TOTAL COVERGROUP COVERAGE: 78.50%  COVERGROUP TYPES: 4
+End time: 17:10:52 on Jan 26,2026, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0

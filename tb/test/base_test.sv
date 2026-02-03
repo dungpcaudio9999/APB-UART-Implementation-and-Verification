@@ -1,28 +1,18 @@
 `ifndef BASE_TEST_SV
 `define BASE_TEST_SV
-
 `include "environment.sv"
 
 class base_test;
-    string      name;
-    environment env;
+  string name;
+  environment env; // Assigned from tb_top
 
-    function new(string name = "base_test");
-        this.name = name;
-        env = new("env");
-    endfunction
-
-  // Hook to be called from tb_top after env.build()
+  function new(string name="base_test"); this.name=name; endfunction
   virtual task configure(); endtask
-
-    virtual task run();
-        $display("[%s] Starting test", name);
-        env.run();
-        // Default: wait some time
-        #10000;
-        $display("[%s] Finished test", name);
-    endtask
+  virtual task run();
+    $display("Starting %s", name);
+    env.run();
+    #2000000; // Timeout
+    $display("Finished %s", name);
+  endtask
 endclass
-
 `endif
-
