@@ -1,9 +1,0 @@
-var g_db_data = [
-{dummy:0},
-{name:'cg_apb',f:1,type:6,id:930,tb:'17',h:'7',m:'10',hp:'41.17%',cov:['46.66%','R'],g:'100.00%',gp:['46.66%','R'],opts:[[],['merge_instance','auto(true)']],hdlPath:'/tb_top_sv_unit/coverage_collector',parent:'928'},
-{name:'cg_uart_cfg',f:1,type:6,id:938,tb:'42',h:'5',m:'37',hp:'11.90%',cov:['35.62%','R'],g:'100.00%',gp:['35.62%','R'],opts:[[],['merge_instance','auto(true)']],hdlPath:'/tb_top_sv_unit/coverage_collector',parent:'928'},
-{name:'cg_uart_data',f:1,type:6,id:950,tb:'20',h:'3',m:'17',hp:'15.00%',cov:['25.00%','R'],g:'100.00%',gp:['25.00%','R'],opts:[[],['merge_instance','auto(true)']],hdlPath:'/tb_top_sv_unit/coverage_collector',parent:'928'},
-{name:'cg_apb',f:1,type:6,id:1108,tb:'17',h:'7',m:'10',hp:'41.17%',cov:['46.66%','R'],g:'100.00%',gp:['46.66%','R'],opts:[[],['merge_instance','true']],hdlPath:'work.tb_top_sv_unit::coverage_collector',parent:'1106'},
-{name:'cg_uart_cfg',f:1,type:6,id:1116,tb:'42',h:'5',m:'37',hp:'11.90%',cov:['35.62%','R'],g:'100.00%',gp:['35.62%','R'],opts:[[],['merge_instance','true']],hdlPath:'work.tb_top_sv_unit::coverage_collector',parent:'1106'},
-{name:'cg_uart_data',f:1,type:6,id:1128,tb:'20',h:'3',m:'17',hp:'15.00%',cov:['25.00%','R'],g:'100.00%',gp:['25.00%','R'],opts:[[],['merge_instance','true']],hdlPath:'work.tb_top_sv_unit::coverage_collector',parent:'1106'}];
-processConsCovergroupsData(g_db_data);
