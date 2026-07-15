@@ -17,7 +17,9 @@ wlft*
 *.out
 sim.out
 
-# Coverage database (We keep covhtmlreport/ and coverage summary txt files)
+# Coverage database and reports (Regenerated via scripts)
 coverage_db/
 coverage_report/
-code_coverage_full.txt
+covhtmlreport/
+code_coverage_*.txt
+coverage_summary*.txt
