@@ -1,9 +1,0 @@
--html
--htmldir
-coverage_report
--details
--threshL
-50
--threshH
-90
-coverage_db/merged_coverage.ucdb

@@ -1,0 +1,23 @@
+# ModelSim/QuestaSim compilation and simulation outputs
+work/
+transcript
+modelsim.ini
+vish_stacktrace.vstf
+
+# Waveforms (all formats)
+*.wlf
+wlft*
+*.vcd
+*.fsdb
+*.ghw
+*.vpd
+
+# Simulation logs and generic outputs
+*.log
+*.out
+sim.out
+
+# Coverage database (We keep covhtmlreport/ and coverage summary txt files)
+coverage_db/
+coverage_report/
+code_coverage_full.txt
